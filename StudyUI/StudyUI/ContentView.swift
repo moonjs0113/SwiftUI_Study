@@ -11,9 +11,9 @@ struct ContentView: View {
     // @State : mutating, View가 다 구조체라서 mutating 속성이 필요함
     @State private var tapCount: CGFloat = 0
     @State private var stateString: String = ""
-    @State private var colorString: String = ""
+    @State private var colorString: String = "Empty"
     
-    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green"]
+    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green", "Green"]
     
     var body: some View {
         NavigationView {
@@ -21,7 +21,11 @@ struct ContentView: View {
             // child View를 10개까지만 넣을 수 있는듯 11개가 넘어가면 오류
             // -> Section이나 Group으로 묶으면 11개 이상도 가능함
             Form {
+                // Navigation 이동해서 작동
                 Picker("Select Color", selection: $colorString) {
+                    // \.self 반복할 collection Data가 고유하다는 의미를 줌
+                    // 따라서 self.arrayColor에 중복값이 있으면 안됨
+                    // -> 중복값이 있어서도 컴파일 에러, 런타임 에러는 안 생김, 명시의 느낌인가봄
                     ForEach(self.arrayColor, id: \.self) { color in
                         Text(color)
                     }
@@ -57,9 +61,7 @@ struct ContentView: View {
                         Text("Section in Group #1 without padding()")
                     }
                 }
-                Group {
-                    Text("Last Text")
-                }
+                Text("Last Text")
             }
             .navigationTitle("SwiftUI Navigation")
             .navigationBarTitleDisplayMode(.inline) // .large = .automatic
