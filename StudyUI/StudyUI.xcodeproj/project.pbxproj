@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7956B0C27BF902A005A5DB7 /* ContentView16p2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7956B0B27BF902A005A5DB7 /* ContentView16p2.swift */; };
 		C7CD0EDE27BE1B7300FB821B /* StudyUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD0EDD27BE1B7300FB821B /* StudyUIApp.swift */; };
 		C7CD0EE027BE1B7300FB821B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD0EDF27BE1B7300FB821B /* ContentView.swift */; };
 		C7CD0EE227BE1B7400FB821B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CD0EE127BE1B7400FB821B /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C7956B0B27BF902A005A5DB7 /* ContentView16p2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView16p2.swift; sourceTree = "<group>"; };
 		C7CD0EDA27BE1B7300FB821B /* StudyUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CD0EDD27BE1B7300FB821B /* StudyUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIApp.swift; sourceTree = "<group>"; };
 		C7CD0EDF27BE1B7300FB821B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7956B0A27BF8FF0005A5DB7 /* Day16 */ = {
+			isa = PBXGroup;
+			children = (
+				C7CD0EDF27BE1B7300FB821B /* ContentView.swift */,
+				C7956B0B27BF902A005A5DB7 /* ContentView16p2.swift */,
+			);
+			path = Day16;
+			sourceTree = "<group>";
+		};
 		C7CD0ED127BE1B7200FB821B = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CD0EDD27BE1B7300FB821B /* StudyUIApp.swift */,
-				C7CD0EDF27BE1B7300FB821B /* ContentView.swift */,
+				C7956B0A27BF8FF0005A5DB7 /* Day16 */,
 				C7CD0EE127BE1B7400FB821B /* Assets.xcassets */,
 				C7CD0EE327BE1B7400FB821B /* Preview Content */,
 			);
@@ -139,6 +150,7 @@
 			files = (
 				C7CD0EE027BE1B7300FB821B /* ContentView.swift in Sources */,
 				C7CD0EDE27BE1B7300FB821B /* StudyUIApp.swift in Sources */,
+				C7956B0C27BF902A005A5DB7 /* ContentView16p2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

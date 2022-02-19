@@ -12,6 +12,7 @@ struct StudyUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            ContentView16p2()
         }
     }
 }
