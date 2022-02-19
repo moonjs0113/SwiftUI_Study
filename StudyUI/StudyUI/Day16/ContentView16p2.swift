@@ -14,23 +14,29 @@ struct ContentView16p2: View {
     @State private var checkAmount: Double = 0.0
     @State private var numberOfPeople: Int = 0
     @State private var tipPercentage: Int = 20
-
     let tipPercentages = [10, 15, 20, 25, 0]
     
-    var totalPerPerson: Double {
+    var totalAmount: Double {
         let tipValue = (self.checkAmount / 100) * Double(self.tipPercentage)
         let grandTotal = self.checkAmount + tipValue
-        let amountPerPerson = grandTotal / Double(self.numberOfPeople + 2)
+        
+        return grandTotal
+    }
+    
+    var totalPerPerson: Double {
+        let amountPerPerson = self.totalAmount / Double(self.numberOfPeople + 2)
         
         return amountPerPerson
     }
+    
+    let formatterUSD: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currencyCode ?? "USD")
     
     var body: some View {
         Form {
             Group{
                 Section {
                     // Locale 지역 클래스
-                    TextField("Amount", value: self.$checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"), prompt: Text("Prompt Text - Placeholder"))
+                    TextField("Amount", value: self.$checkAmount, format: self.formatterUSD, prompt: Text("Prompt Text - Placeholder"))
                         .keyboardType(.decimalPad)
                         .focused(self.$amountIsFocused)
                     // NavigationView로 감싸줘야 하지만,
@@ -49,13 +55,27 @@ struct ContentView16p2: View {
                             Text(tip, format: .percent)
                         }
                     }.pickerStyle(.segmented)
+                    
+                    Picker("Tip Percentage", selection: self.$tipPercentage) {
+                        ForEach(0..<101) { per in
+                            Text(per, format: .percent)
+                        }
+                    }
                 } header: {
                     // Section Title 붙이는 법
                     Text("Real Section Title")
                 }
                 
                 Section {
-                    Text(self.totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                    Text(self.totalPerPerson, format: self.formatterUSD)
+                } header: {
+                    Text("Amount per person")
+                }
+                
+                Section {
+                    Text(self.totalAmount, format: self.formatterUSD)
+                } header: {
+                    Text("Total Amount")
                 }
                 
             }
