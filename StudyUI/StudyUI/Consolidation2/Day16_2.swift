@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView16p2: View {
+struct Day16_2: View {
     // @State랑 같음 UI 입력 포커싱에 쓰임
     @FocusState private var amountIsFocused: Bool
     
@@ -79,6 +79,9 @@ struct ContentView16p2: View {
                 }
                 
             }
+            NavigationLink(destination: ChallengeView()) {
+                Text("Go to Challenge")
+            }
         }
         .navigationTitle("SwiftUI Day16 - part 2")
         .navigationBarTitleDisplayMode(.large)
@@ -98,6 +101,6 @@ struct ContentView16p2: View {
 
 struct ContentView16p2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView16p2()
+        Day16_2()
     }
 }
