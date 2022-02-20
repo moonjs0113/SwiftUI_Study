@@ -13,7 +13,7 @@ struct Day16: View {
     @State private var stateString: String = ""
     @State private var colorString: String = "Empty"
     
-    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green", "Green"]
+    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green"]
     
     var body: some View {
         // Form = TableView 맞는듯
