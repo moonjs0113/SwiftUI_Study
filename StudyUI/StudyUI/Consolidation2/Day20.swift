@@ -28,7 +28,6 @@ struct Day20: View {
                     }
                     RadialGradient(gradient: Gradient(colors: [.white, .blue, .black]),
                                    center: .bottomLeading, startRadius: 50, endRadius: 220)
-                        .padding(20)
                 }.background(.brown)
                 VStack(alignment: .center, spacing: 20) {
                     Text("VStack")
@@ -47,7 +46,8 @@ struct Day20: View {
                         Image(systemName: "pencil")
                             .renderingMode(.original)
                     }
-                    Color(red: 0, green: 0.5, blue: 0.4).frame(minWidth: 50, maxWidth: 70, minHeight: 60, maxHeight: 300)
+                    Color(red: 0, green: 0.5, blue: 0.6)
+                        .frame(minWidth: 50, maxWidth: 70, minHeight: 60, maxHeight: 300)
                 }.background(.red)
                 VStack(alignment: .trailing, spacing: 10) {
                     Button("Button with destructive", role: .destructive, action: self.buttonFunction)
@@ -66,6 +66,9 @@ struct Day20: View {
                         Button("OK"){ }
                     }
                 }
+            }
+            NavigationLink(destination: Day21()) {
+                Text("Go to Day21")
             }
             LinearGradient(gradient: Gradient(stops: [
                 Gradient.Stop(color: .blue, location: 0.1),
