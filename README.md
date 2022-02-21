@@ -42,5 +42,3 @@ Alert, ignoresSafeArea
 ---
 
 ## Project 3 (Day 23 ~ 24)
-
-

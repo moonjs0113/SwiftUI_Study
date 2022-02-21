@@ -39,8 +39,10 @@ struct Day21: View {
     }
     
     func askQuestion() {
-        self.countries.shuffle()
-        self.correctAnswer = Int.random(in: 0...2)
+        if !self.showingTotalScore {
+            self.countries.shuffle()
+            self.correctAnswer = Int.random(in: 0...2)
+        }
     }
     
     func initGame() {

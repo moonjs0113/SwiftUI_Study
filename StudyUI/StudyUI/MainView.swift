@@ -14,6 +14,7 @@ struct MainView: View {
                 Section {
                     NavigationLink("Project 1", destination: Day16())
                     NavigationLink("Project 2", destination: Day20())
+                    NavigationLink("Project 3", destination: Day23())
                 } header: {
                     Text("Consolidation II")
                 }
