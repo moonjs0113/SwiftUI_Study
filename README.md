@@ -32,6 +32,14 @@ ForEach, Formatter
 ---
 
 ## Project 2 (Day 20 ~ 22)
+``` Swift
+// View Struct
+Color, Gradient(Linear, Radial, Angular),
+ZStack, VStack, HStack, Image
+// Function
+Alert, ignoresSafeArea
+```
+---
 
 ## Project 3 (Day 23 ~ 24)
 
