@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Day21: View {
+struct Day21: View, FlagDelegate {
     @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State var correctAnswer = Int.random(in: 0...2)
     
@@ -28,7 +28,6 @@ struct Day21: View {
     }
     
     func flagTapped(_ number: Int) {
-        self.countQuestion()
         if (number == self.correctAnswer) {
             self.myScore += 1
             self.askQuestion()
@@ -40,13 +39,14 @@ struct Day21: View {
     
     func askQuestion() {
         if !self.showingTotalScore {
+            self.countQuestion()
             self.countries.shuffle()
             self.correctAnswer = Int.random(in: 0...2)
         }
     }
     
     func initGame() {
-        self.questionCount = 1
+        self.questionCount = 0
         self.myScore = 0
         self.askQuestion()
     }
@@ -70,15 +70,7 @@ struct Day21: View {
                     }
                     VStack(alignment: .center, spacing: 10) {
                         ForEach(0..<3) { number in
-                            Button {
-                                self.flagTapped(number)
-                            } label: {
-                                Image(self.countries[number])
-                                    .renderingMode(.original)
-                                    .clipShape(Capsule())
-                                    .shadow(radius: 5)
-                                    .frame(maxHeight: 100)
-                            }
+                            FlagImage(index: number, flagDelegate: self)
                         }
                     }
                 }
@@ -99,6 +91,29 @@ struct Day21: View {
         }
     }
 }
+
+protocol FlagDelegate {
+    var countries: [String] { get set }
+    func flagTapped(_ number: Int) -> Void
+}
+
+struct FlagImage: View {
+    var index: Int
+    var flagDelegate: FlagDelegate
+    
+    var body: some View {
+        Button {
+            self.flagDelegate.flagTapped(self.index)
+        } label: {
+            Image(self.flagDelegate.countries[self.index])
+                .renderingMode(.original)
+                .clipShape(Capsule())
+                .shadow(radius: 5)
+                .frame(maxHeight: 100)
+        }
+    }
+}
+
 
 struct Day21_Previews: PreviewProvider {
     static var previews: some View {

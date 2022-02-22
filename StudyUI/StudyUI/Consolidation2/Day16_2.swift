@@ -76,6 +76,7 @@ struct Day16_2: View {
                     Text(self.totalAmount, format: self.formatterUSD)
                 } header: {
                     Text("Total Amount")
+                        .foregroundColor(self.tipPercentage == 0 ? .red : .black)
                 }
                 
             }
