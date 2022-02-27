@@ -16,8 +16,14 @@ struct MainView: View {
                     NavigationLink("Project 2", destination: Day20())
                     NavigationLink("Project 3", destination: Day23())
                     NavigationLink("Consolidation II", destination: Consolidation2())
+                    
                 } header: {
                     Text("Consolidation II")
+                }
+                Section {
+                    NavigationLink("Project 4", destination: Day26())
+                } header: {
+                    Text("Consolidation III")
                 }
             }
             .navigationTitle("SwiftUI Study App")
