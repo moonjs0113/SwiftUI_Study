@@ -9,7 +9,15 @@ import CoreML
 import SwiftUI
 
 struct Day27: View {
-    @State private var wakeUp = Date.now
+    static var defaultWakeTime: Date {
+        var components = DateComponents()
+        components.hour = 7
+        components.minute = 0
+        return Calendar.current.date(from: components) ?? Date.now
+    }
+    
+    // static 변수 초기화 전에 사용가능한데, 대신 self 뺴야함
+    @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
 
@@ -41,19 +49,25 @@ struct Day27: View {
     
     var body: some View {
         NavigationView{
-            VStack {
-                Text("When do you want to wake up?")
-                    .font(.headline)
-                DatePicker("Please enter a time", selection: self.$wakeUp, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
+            Form {
+                VStack {
+                    Text("When do you want to wake up?")
+                        .font(.headline)
+                    DatePicker("Please enter a time", selection: self.$wakeUp, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                }
                 
-                Text("Desired amount of sleep")
-                    .font(.headline)
-                Stepper("\(self.sleepAmount.formatted()) hours", value: self.$sleepAmount, in: 4...12, step: 0.25)
+                VStack {
+                    Text("Desired amount of sleep")
+                        .font(.headline)
+                    Stepper("\(self.sleepAmount.formatted()) hours", value: self.$sleepAmount, in: 4...12, step: 0.25)
+                }
                 
-                Text("Daily coffee intake")
-                    .font(.headline)
-                Stepper(self.coffeeAmount == 1 ? "1 cup" : "\(self.coffeeAmount) cops", value: self.$coffeeAmount, in: 1...20)
+                VStack {
+                    Text("Daily coffee intake")
+                        .font(.headline)
+                    Stepper(self.coffeeAmount == 1 ? "1 cup" : "\(self.coffeeAmount) cops", value: self.$coffeeAmount, in: 1...20)
+                }
             }
             .navigationTitle("Project 4 - BetterRest")
             .navigationBarTitleDisplayMode(.inline)
