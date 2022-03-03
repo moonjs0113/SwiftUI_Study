@@ -27,7 +27,9 @@ struct Day29: View {
                 ForEach(0..<3) {
                     Text("Dynamic row From ForEach \($0)")
                 }
+                NavigationLink("Go to Day30", destination: Day30())
             }
+            
         }.listStyle(.grouped)
     }
 }
