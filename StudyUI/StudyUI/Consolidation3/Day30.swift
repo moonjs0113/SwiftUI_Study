@@ -12,9 +12,32 @@ struct Day30: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     func addNewWord() {
         let answer = self.newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
+        
+        guard isOriginal(word: answer) else {
+            self.wordError(title: "Word used already",
+                           message: "Be more original")
+            return
+        }
+        
+        guard isPossible(word: answer) else {
+            self.wordError(title: "Word not possible",
+                           message: "You can't spell that word from '\(self.rootWord)'!")
+            return
+        }
+        
+        guard isReal(word: answer) else {
+            self.wordError(title: "Word not recognized",
+                           message: "You can't just make them up, you know!")
+            return
+        }
+        
         withAnimation{
             self.usedWords.insert(answer, at: 0)
         }
@@ -32,7 +55,36 @@ struct Day30: View {
         fatalError("Could not load start.txt from bundle.")
     }
     
+    func isOriginal(word: String) -> Bool {
+        !self.usedWords.contains(word)
+    }
     
+    func isPossible(word: String) -> Bool {
+        var tempWord = self.rootWord
+        
+        for letter in word {
+            if let pos = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: pos)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        
+        return misspelledRange.location == NSNotFound
+    }
+    
+    func wordError(title: String, message: String) {
+        self.errorTitle = title
+        self.errorMessage = message
+        self.showingError = true
+    }
     
     var body: some View {
         NavigationView {
@@ -51,6 +103,11 @@ struct Day30: View {
                         }
                     }
                 }
+            }
+            .alert(self.errorTitle, isPresented: self.$showingError){
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(self.errorMessage)
             }
         }
         .navigationTitle(self.rootWord)
