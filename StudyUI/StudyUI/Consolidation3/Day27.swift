@@ -17,10 +17,11 @@ struct Day27: View {
     }
     
     // static 변수 초기화 전에 사용가능한데, 대신 self 뺴야함
+    // $변수를 통한 값 변경은 didSet, willSet을 호출하지 않음
     @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
-
+    
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert: Bool = false
@@ -50,28 +51,48 @@ struct Day27: View {
     var body: some View {
         NavigationView{
             Form {
-                VStack {
+                Section {
                     Text("When do you want to wake up?")
                         .font(.headline)
                     DatePicker("Please enter a time", selection: self.$wakeUp, displayedComponents: .hourAndMinute)
                         .labelsHidden()
+                } header: {
+                    Text("Choose Wake Up Time")
                 }
                 
-                VStack {
-                    Text("Desired amount of sleep")
-                        .font(.headline)
-                    Stepper("\(self.sleepAmount.formatted()) hours", value: self.$sleepAmount, in: 4...12, step: 0.25)
+                Section {
+                    VStack {
+                        Text("Desired amount of sleep")
+                            .font(.headline)
+                        Stepper("\(self.sleepAmount.formatted()) hours", value: self.$sleepAmount, in: 4...12, step: 0.25)
+                    }
+                    
+                    VStack {
+                        Text("Daily coffee intake")
+                            .font(.headline)
+                        Picker("Number of Cups", selection: self.$coffeeAmount) {
+                            ForEach(1..<21) { cups in
+                                Text(cups == 1 ? "1 cup" : "\(cups) cups")
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Set Value")
                 }
                 
-                VStack {
-                    Text("Daily coffee intake")
-                        .font(.headline)
-                    Stepper(self.coffeeAmount == 1 ? "1 cup" : "\(self.coffeeAmount) cops", value: self.$coffeeAmount, in: 1...20)
+                Section {
+                    HStack {
+                        Text("Your ideal bedtime is")
+                        Text("\(self.alertMessage)")
+                    }
+                } header: {
+                    Text("Result")
                 }
             }
             .navigationTitle("Project 4 - BetterRest")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                // 버튼을 없애고, 항상 시간이 표시되도록 하는 것 고민해보기
                 Button("Calculate", action: self.calculateBedTime)
             }
             .alert(self.alertTitle, isPresented: self.$showingAlert){
