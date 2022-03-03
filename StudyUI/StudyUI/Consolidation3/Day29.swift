@@ -10,6 +10,14 @@ import SwiftUI
 struct Day29: View {
     let people = ["Finn", "Leia", "Luke", "Rey"]
     
+    func getFile() {
+        if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: fileURL) {
+                print(fileContents)
+            }
+        }
+    }
+    
     var body: some View {
 //        List(0..<3) {
         List(self.people, id: \.self) {
