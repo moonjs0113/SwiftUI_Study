@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct Day29: View {
+    let people = ["Finn", "Leia", "Luke", "Rey"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        List(0..<3) {
+        List(self.people, id: \.self) {
+            Text("Dynamic row From List \($0)")
+            Text("Static Text")
+            Section("Dynamic 1") {
+                ForEach(0..<3) {
+                    Text("Dynamic row From ForEach \($0)")
+                }
+            }
+        }.listStyle(.grouped)
     }
 }
 
