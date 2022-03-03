@@ -11,6 +11,7 @@ struct Day30: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var score = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -19,6 +20,12 @@ struct Day30: View {
     func addNewWord() {
         let answer = self.newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
+        
+        guard isShortOrRoot(word: answer) else {
+            self.wordError(title: "Word is so short or root word",
+                           message: "Be change!")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             self.wordError(title: "Word used already",
@@ -40,11 +47,16 @@ struct Day30: View {
         
         withAnimation{
             self.usedWords.insert(answer, at: 0)
+            self.score += answer.count
         }
         self.newWord = ""
     }
     
     func startGame() {
+        withAnimation{
+            self.score = 0
+            self.usedWords = [String]()
+        }
         if let fileURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let fileContents = try? String(contentsOf: fileURL) {
                 let allWords = fileContents.components(separatedBy: "\n")
@@ -53,6 +65,10 @@ struct Day30: View {
             }
         }
         fatalError("Could not load start.txt from bundle.")
+    }
+    
+    func isShortOrRoot(word: String) -> Bool {
+        (word.count > 2) && (word != self.rootWord)
     }
     
     func isOriginal(word: String) -> Bool {
@@ -90,9 +106,10 @@ struct Day30: View {
         NavigationView {
             List {
                 Section {
+                    Text("Score: \(self.score)")
                     TextField("Enter your word", text: self.$newWord)
                         .autocapitalization(.none)
-//                        .onSubmit { self.addNewWord() }
+                    //                        .onSubmit { self.addNewWord() }
                 }
                 
                 Section {
@@ -113,6 +130,13 @@ struct Day30: View {
         .navigationTitle(self.rootWord)
         .onSubmit(self.addNewWord)
         .onAppear(perform: self.startGame)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Button("New Game") {
+                    self.startGame()
+                }
+            }
+        }
     }
 }
 
