@@ -19,6 +19,9 @@ struct Day21: View, FlagDelegate {
     @State private var myScore: Int = 0
     @State private var questionCount: Int = 1
     
+    @State private var animationAmount = 0.0
+    @State private var animationOpacity = 1.0
+    
     func countQuestion() {
         if self.questionCount < 8 {
             self.questionCount += 1
@@ -30,6 +33,10 @@ struct Day21: View, FlagDelegate {
     func flagTapped(_ number: Int) {
         if (number == self.correctAnswer) {
             self.myScore += 1
+            withAnimation(.linear(duration: 1)){
+                self.animationAmount += 360
+                self.animationOpacity = 0.25
+            }
             self.askQuestion()
         } else {
             self.alertMessage = "That’s the flag of \(self.countries[number])"
@@ -38,6 +45,10 @@ struct Day21: View, FlagDelegate {
     }
     
     func askQuestion() {
+        withAnimation(.linear(duration: 1)){
+            self.animationOpacity = 1
+        }
+        
         if !self.showingTotalScore {
             self.countQuestion()
             self.countries.shuffle()
@@ -70,7 +81,20 @@ struct Day21: View, FlagDelegate {
                     }
                     VStack(alignment: .center, spacing: 10) {
                         ForEach(0..<3) { number in
-                            FlagImage(index: number, flagDelegate: self)
+                            let flagImage = FlagImage(index: number, flagDelegate: self)
+                            flagImage
+                                .rotation3DEffect(.degrees(self.animationAmount),
+                                                       axis: (x: 0, y: 1, z: 0))
+                                .opacity(self.animationOpacity)
+//                            if number == self.correctAnswer {
+//                                flagImage
+//                                    .rotation3DEffect(.degrees(self.animationAmount),
+//                                                           axis: (x: 0, y: 1, z: 0))
+//                            } else {
+//                                flagImage
+//                            }
+//
+//                            flagImage
                         }
                     }
                 }
