@@ -26,6 +26,7 @@
 		C7CD0EE027BE1B7300FB821B /* Day16.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD0EDF27BE1B7300FB821B /* Day16.swift */; };
 		C7CD0EE227BE1B7400FB821B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CD0EE127BE1B7400FB821B /* Assets.xcassets */; };
 		C7CD0EE527BE1B7400FB821B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CD0EE427BE1B7400FB821B /* Preview Assets.xcassets */; };
+		C7E9EBAB27D49E4A00E80F8D /* Day32.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E9EBAA27D49E4A00E80F8D /* Day32.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C7CD0EDF27BE1B7300FB821B /* Day16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16.swift; sourceTree = "<group>"; };
 		C7CD0EE127BE1B7400FB821B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7CD0EE427BE1B7400FB821B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7E9EBAA27D49E4A00E80F8D /* Day32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day32.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C72B93DC27D0FC4B00A49A00 /* Day29.swift */,
 				C72B93DE27D1023E00A49A00 /* Day30.swift */,
 				C72B93E027D1079A00A49A00 /* start.txt */,
+				C7E9EBAA27D49E4A00E80F8D /* Day32.swift */,
 			);
 			path = Consolidation3;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				C72B93DD27D0FC4B00A49A00 /* Day29.swift in Sources */,
 				C7C74BA127C468E50041002F /* Day23_2.swift in Sources */,
 				C77F3E1227C273E9002681B9 /* Day21.swift in Sources */,
+				C7E9EBAB27D49E4A00E80F8D /* Day32.swift in Sources */,
 				C72D9EAC27C0F2E200519438 /* Day20.swift in Sources */,
 				C7CD0EDE27BE1B7300FB821B /* StudyUIApp.swift in Sources */,
 				C72D9EAA27C0F15F00519438 /* MainView.swift in Sources */,

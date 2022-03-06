@@ -52,14 +52,24 @@ Alert, ignoresSafeArea
 
 ## Project 4 (Day 26 ~ 28)
 ``` Swift
-// Property Wrapper
-@ViewBuilder, ViewModifier
+// Objcect
+Date(), DateComponents()
+// Format
+DateFormat
+// CoreML
+MLModelConfiguration(), CoreMLClass()
 ```
 ---
 
 ## Project 5 (Day 29 ~ 30)
 ``` Swift
-// Property Wrapper
-@ViewBuilder, ViewModifier
+// View
+List vs ForEach
+// Get File Conetns
+Bundle.main.url()
+// function
+withAnimation{ }
+// Object
+UITextChecker()
 ```
 ---

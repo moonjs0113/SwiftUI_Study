@@ -20,11 +20,11 @@ struct MainView: View {
                 } header: {
                     Text("Consolidation II")
                 }
-                Section {
+                
+                Section("Consolidation III") {
                     NavigationLink("Project 4", destination: Day26())
                     NavigationLink("Project 5", destination: Day29())
-                } header: {
-                    Text("Consolidation III")
+                    NavigationLink("Project 6", destination: Day32())
                 }
             }
             .navigationTitle("SwiftUI Study App")
