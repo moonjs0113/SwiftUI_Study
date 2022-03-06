@@ -11,6 +11,7 @@ struct Day32: View {
     @State private var animationAmount32 = 1.0
     @State private var animationAmount = 1.0
     @State private var animationAmount3D = 1.0
+    @State private var enabled = false
     
     var body: some View {
         print(self.animationAmount)
@@ -20,7 +21,21 @@ struct Day32: View {
                 .easeInOut(duration: 1)
                     .repeatCount(3, autoreverses: true)
             ), in: 1...10)
-            Spacer(minLength: 30)
+            NavigationLink("Day33", destination: Day33())
+            
+            Spacer(minLength: 15)
+            
+            Button("Tap Me") {
+                self.enabled.toggle()
+            }
+            .frame(width: 200, height: 200)
+            .background(self.enabled ? .yellow : .green)
+            .animation(.default, value: self.enabled)
+//            .animation(nil, value: self.enabled)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: self.enabled ? 60 : 0))
+            .animation(.interpolatingSpring(stiffness: 10, damping: 1), value: self.enabled)
+            
             Button("Tap Me") {
                 withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)){
                     self.animationAmount3D += 360
@@ -33,7 +48,7 @@ struct Day32: View {
 //            .scaleEffect(self.animationAmount3D)
             .rotation3DEffect(.degrees(self.animationAmount3D),
                               axis: (x: 0, y: 1, z: 0))
-            // Day32
+            
             Button("Tap Me") {
     //            self.animationAmount += 0.1
             }
