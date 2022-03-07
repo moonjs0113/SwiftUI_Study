@@ -13,7 +13,7 @@ struct User {
 }
 
 struct Day36: View {
-    @State private var user = User(())
+    @State private var user = User()
     var body: some View {
         VStack {
             Text("Your name is \(self.user.firstName) \(self.user.lastName)")
