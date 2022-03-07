@@ -88,14 +88,15 @@ struct Day36: View {
                         UserDefaults.standard.set(data, forKey: "UserData")
                     }
                 }
+                
                 Button("Load Codable User") {
                     let decoder = JSONDecoder()
                     if let userData = UserDefaults.standard.data(forKey: "UserData") {
                         if let data = try? decoder.decode(CodableUser.self, from: userData) {
                             self.loadCodableUser = data
-                            self.isLoadSuccess.toggle()
                         }
                     }
+                    self.isLoadSuccess.toggle()
                 }
                 
                 if self.isLoadSuccess {
@@ -106,6 +107,11 @@ struct Day36: View {
                     if let codableUser = self.loadCodableUser {
                         Text("Load name is \(codableUser.firstName) \(codableUser.lastName)")
                     }
+                }
+                
+                Button("Delete Codable User") {
+                    self.loadCodableUser = nil
+                    UserDefaults.standard.removeObject(forKey: "UserData")
                 }
             }
         }
