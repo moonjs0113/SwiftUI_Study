@@ -15,6 +15,7 @@
 		C72D9EAC27C0F2E200519438 /* Day20.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D9EAB27C0F2E200519438 /* Day20.swift */; };
 		C73A4D7D27CBBC2A00B2769E /* Day26.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A4D7C27CBBC2A00B2769E /* Day26.swift */; };
 		C73B126F27C605C300C77968 /* Consolidation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B126E27C605C300C77968 /* Consolidation2.swift */; };
+		C73F60B727D73B5A00DC57DD /* Day37.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F60B627D73B5A00DC57DD /* Day37.swift */; };
 		C7420D2427C3C34A00F8959E /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7420D2327C3C34A00F8959E /* Day23.swift */; };
 		C74D181727D64BD900B68468 /* Day36.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74D181627D64BD900B68468 /* Day36.swift */; };
 		C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */; };
@@ -40,6 +41,7 @@
 		C72D9EAB27C0F2E200519438 /* Day20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day20.swift; sourceTree = "<group>"; };
 		C73A4D7C27CBBC2A00B2769E /* Day26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day26.swift; sourceTree = "<group>"; };
 		C73B126E27C605C300C77968 /* Consolidation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consolidation2.swift; sourceTree = "<group>"; };
+		C73F60B627D73B5A00DC57DD /* Day37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day37.swift; sourceTree = "<group>"; };
 		C7420D2327C3C34A00F8959E /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
 		C74D181627D64BD900B68468 /* Day36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day36.swift; sourceTree = "<group>"; };
 		C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = ../../../CreateML/SleepCalculator.mlmodel; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C74D181627D64BD900B68468 /* Day36.swift */,
+				C73F60B627D73B5A00DC57DD /* Day37.swift */,
 			);
 			path = Consolidation4;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				C7E9EBAD27D4B1C800E80F8D /* Day33.swift in Sources */,
 				C73A4D7D27CBBC2A00B2769E /* Day26.swift in Sources */,
 				C72B93DD27D0FC4B00A49A00 /* Day29.swift in Sources */,
+				C73F60B727D73B5A00DC57DD /* Day37.swift in Sources */,
 				C7C74BA127C468E50041002F /* Day23_2.swift in Sources */,
 				C77F3E1227C273E9002681B9 /* Day21.swift in Sources */,
 				C7E9EBAB27D49E4A00E80F8D /* Day32.swift in Sources */,

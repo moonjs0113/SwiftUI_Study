@@ -12,7 +12,10 @@ struct CodableUser: Codable {
     var lastName: String
 }
 
+// @StateObject 로 사용할 Class
+// ObservableObject Protocol 채택
 class User: ObservableObject {
+    // @Published: ObservableObject의 상태 구독할 변수
     @Published var firstName = "Bilbo"
     @Published var lastName = "Baggins"
 }
@@ -31,6 +34,7 @@ struct SecondView: View {
 }
 
 struct Day36: View {
+    // @StateObject: Custom Objfect일때 사용하는 듯
     @StateObject private var user = User()
     @State private var showingSheet = false
     
@@ -67,10 +71,13 @@ struct Day36: View {
                 }
                 .onDelete(perform: self.removeRows(at:))
             }
+            
             Button("Add Number") {
                 self.numbers.append(self.currentNumber)
                 self.currentNumber += 1
             }
+            
+            NavigationLink("Day37", destination: Day37())
             
             VStack(spacing: 10) {
                 Button("UserDefaults Tap count: \(self.tapCount)") {

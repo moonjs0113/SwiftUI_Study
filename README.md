@@ -61,7 +61,7 @@ MLModelConfiguration(), CoreMLClass()
 ```
 ---
 
-## Project 5 (Day 29 ~ 30)
+## Project 5 (Day 29 ~ 31)
 ``` Swift
 // View
 List vs ForEach
@@ -71,5 +71,30 @@ Bundle.main.url()
 withAnimation{ }
 // Object
 UITextChecker()
+```
+---
+
+## Project 6 (Day 32 ~ 34)
+``` Swift
+// withAnimation
+withAnimation(
+    .interpolatingSpring(stiffness: 5, damping: 1)) {
+        self.animationAmount3D += 360
+        }
+
+// animation
+.animation(
+    .easeInOut(duration: 1)
+        .repeatForever(autoreverses: false),
+    value: self.animationAmount32
+    )
+```
+---
+
+## Project 7 (Day 36 ~ 38)
+``` Swift
+// Property Wrappers
+@StateObject, @AppStorage, @Environment, @FetchRequest,
+@Published, @ScaledMetric, @SceneStorage, @ObservedObject
 ```
 ---
