@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct Day39_3: View {
-//    let layout = [
-//        GridItem(.fixed(80)),
-//        GridItem(.fixed(80)),
-//        GridItem(.fixed(80)),
-//    ]
+    let layout = [
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80)),
+        GridItem(.fixed(80)),
+    ]
     
 //    let layout = [
 //        GridItem(.adaptive(minimum: 80)),
 //    ]
-        let layout = [
+        let layoutAdaptive = [
             GridItem(.adaptive(minimum: 80, maximum: 120)),
         ]
     
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHGrid(rows: self.layout) {
+            LazyVGrid(columns: self.layout) {
+                ForEach(0..<10) {
+                    Text("Item \($0)")
+                }
+            }
+            
+            LazyHGrid(rows: self.layoutAdaptive) {
                 ForEach(0..<10) {
                     Text("Item \($0)")
                 }

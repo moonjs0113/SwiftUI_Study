@@ -39,7 +39,7 @@ struct Day39: View {
             // Lazy*Stack -> 화면 보여야 데이터 로드
             LazyVStack(spacing: 10) {
                 ForEach(0..<20) {
-                    CustomText("Item \($0) \(self.$decodeString)")
+                    CustomText("Item \($0) \(self.decodeString)")
 //                    Text("Item \($0)")
                         .font(.title)
                 }
