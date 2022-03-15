@@ -20,9 +20,21 @@ struct Mission: Codable, Identifiable {
     }
     
     let id: Int
-    let launchDate: String?
+    let launchDate: Date?
     let crew: [CrewRole]
     let description: String
+    
+    var formattedLaunchDate: String {
+        self.launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "N/A"
+    }
+    
+    var displayName: String {
+        "Apollo \(id)"
+    }
+    
+    var image: String {
+        "apollo\(id)"
+    }
 }
 
 extension Bundle {
@@ -36,7 +48,12 @@ extension Bundle {
             fatalError("Failed to locate \(file) from bundle.")
         }
         
+        
         let decoder = JSONDecoder()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "y-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
 
         //        [String: Astronaut].self -> T.self
         guard let loaded = try? decoder.decode(T.self, from: data) else {
@@ -47,12 +64,65 @@ extension Bundle {
     }
 }
 
+extension ShapeStyle where Self == Color {
+    static var darkBackground: Color {
+        Color(red: 0.1, green: 0.1, blue: 0.2)
+    }
+    
+    static var lightBackground: Color {
+        Color(red: 0.2, green: 0.2, blue: 0.3)
+    }
+}
+
 struct Day40: View {
     let astronauts: [String:Astronaut] = Bundle.main.decode("astronauts.json")
     let missoins: [Mission] = Bundle.main.decode("missions.json")
     
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
+    
     var body: some View {
-        Text("\(self.astronauts.count)")
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: self.columns) {
+                    ForEach(self.missoins) { mission in
+                        NavigationLink {
+                            Text("Detail view")
+                        } label: {
+                            VStack {
+                                Image(mission.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                                    .padding([.horizontal, .bottom])
+                                
+                                VStack {
+                                    Text(mission.displayName)
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                    Text(mission.formattedLaunchDate)
+                                        .font(.caption)
+                                        .foregroundColor(.white.opacity(0.5))
+                                }
+                                .padding(.vertical)
+                                .frame(maxWidth: .infinity)
+                                .background(.lightBackground)
+                            }
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.lightBackground)
+                        )
+                    }
+                }
+            }
+            .navigationTitle("Moonshot")
+            .preferredColorScheme(.dark)
+        }
+        .background(.darkBackground)
+//        Text("\(self.astronauts.count)")
     }
 }
 
