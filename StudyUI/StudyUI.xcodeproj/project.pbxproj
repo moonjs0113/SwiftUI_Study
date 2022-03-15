@@ -19,6 +19,8 @@
 		C7420D2427C3C34A00F8959E /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7420D2327C3C34A00F8959E /* Day23.swift */; };
 		C74D181727D64BD900B68468 /* Day36.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74D181627D64BD900B68468 /* Day36.swift */; };
 		C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771264F27E0DE0F000CA0B3 /* Day40.swift */; };
+		C771265327E0DFD1000CA0B3 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265127E0DFD1000CA0B3 /* missions.json */; };
+		C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265227E0DFD1000CA0B3 /* astronauts.json */; };
 		C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */; };
 		C77A8D5D27CFA81B00C59679 /* Day27.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A8D5C27CFA81B00C59679 /* Day27.swift */; };
 		C77F3E1027C27107002681B9 /* countries.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77F3E0F27C27107002681B9 /* countries.xcassets */; };
@@ -51,6 +53,8 @@
 		C7420D2327C3C34A00F8959E /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
 		C74D181627D64BD900B68468 /* Day36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day36.swift; sourceTree = "<group>"; };
 		C771264F27E0DE0F000CA0B3 /* Day40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day40.swift; sourceTree = "<group>"; };
+		C771265127E0DFD1000CA0B3 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
+		C771265227E0DFD1000CA0B3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = ../../../CreateML/SleepCalculator.mlmodel; sourceTree = "<group>"; };
 		C77A8D5C27CFA81B00C59679 /* Day27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day27.swift; sourceTree = "<group>"; };
 		C77F3E0F27C27107002681B9 /* countries.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = countries.xcassets; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				C7E45F2027DF8B6900148DA7 /* Day39_2.swift */,
 				C7E45F2227DF8D7700148DA7 /* Day39_3.swift */,
 				C771264F27E0DE0F000CA0B3 /* Day40.swift */,
+				C771265227E0DFD1000CA0B3 /* astronauts.json */,
+				C771265127E0DFD1000CA0B3 /* missions.json */,
 			);
 			path = Consolidation4;
 			sourceTree = "<group>";
@@ -234,8 +240,10 @@
 			files = (
 				C7CD0EE527BE1B7400FB821B /* Preview Assets.xcassets in Resources */,
 				C7E45F1E27DF87ED00148DA7 /* P8.xcassets in Resources */,
+				C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */,
 				C72B93E127D1079A00A49A00 /* start.txt in Resources */,
 				C7CD0EE227BE1B7400FB821B /* Assets.xcassets in Resources */,
+				C771265327E0DFD1000CA0B3 /* missions.json in Resources */,
 				C77F3E1027C27107002681B9 /* countries.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

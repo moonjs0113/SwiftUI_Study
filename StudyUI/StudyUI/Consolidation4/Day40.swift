@@ -37,7 +37,7 @@ struct Day40: View {
     let astronauts = Bundle.main.decode("astronauts.json")
     
     var body: some View {
-        Text(\(self.astronauts.count)))
+        Text("\(self.astronauts.count)")
     }
 }
 
