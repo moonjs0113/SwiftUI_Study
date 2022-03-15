@@ -32,6 +32,7 @@ struct Day39Address: Codable {
 
 struct Day39: View {
     @State private var decodeString: String = "decode"
+    @State private var showingDay40: Bool = false
     
     var body: some View {
 //        ScrollView(.horizontal) {
@@ -68,9 +69,15 @@ struct Day39: View {
                     }
                 }
                 NavigationLink("Next Page", destination: Day39_3())
+                Button("Day40") {
+                    self.showingDay40 = true
+                }
             }
         }
         .frame(maxWidth: .infinity)
+        .sheet(isPresented: self.$showingDay40) {
+            Day40()
+        }
     }
 }
 
