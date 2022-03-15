@@ -13,8 +13,21 @@ struct Astronaut: Codable, Identifiable {
     let description: String
 }
 
+struct Mission: Codable, Identifiable {
+    struct CrewRole: Codable {
+        let name: String
+        let role: String
+    }
+    
+    let id: Int
+    let launchDate: String?
+    let crew: [CrewRole]
+    let description: String
+}
+
 extension Bundle {
-    func decode(_ file: String) -> [String:Astronaut] {
+//    func decode(_ file: String) -> [String:Astronaut] {
+    func decode<T: Codable>(_ file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }
@@ -24,8 +37,9 @@ extension Bundle {
         }
         
         let decoder = JSONDecoder()
-        
-        guard let loaded = try? decoder.decode([String: Astronaut].self, from: data) else {
+
+        //        [String: Astronaut].self -> T.self
+        guard let loaded = try? decoder.decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle.")
         }
         
@@ -34,7 +48,8 @@ extension Bundle {
 }
 
 struct Day40: View {
-    let astronauts = Bundle.main.decode("astronauts.json")
+    let astronauts: [String:Astronaut] = Bundle.main.decode("astronauts.json")
+    let missoins: [Mission] = Bundle.main.decode("missions.json")
     
     var body: some View {
         Text("\(self.astronauts.count)")
