@@ -97,4 +97,16 @@ withAnimation(
 @StateObject, @AppStorage, @Environment, @FetchRequest,
 @Published, @ScaledMetric, @SceneStorage, @ObservedObject
 ```
+Challenge X
+
 ---
+
+## Project 8 (Day 36 ~ 38)
+``` Swift
+Codable Data(JSON)
+Bundle Extension
+```
+Challenge X
+
+---
+
