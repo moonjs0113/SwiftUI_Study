@@ -46,41 +46,68 @@ struct Arc: InsettableShape {
     }
 }
 
+struct Flower: Shape {
+    var petalOffset: Double = -20
+    var petalWidth: Double = 100
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        for number in stride(from: 0, to: Double.pi * 2, by: Double.pi / 8) {
+            let rotation = CGAffineTransform(rotationAngle: number)
+            let position = rotation.concatenating(CGAffineTransform(translationX: rect.width / 2, y: rect.height / 2))
+            let originalPetal = Path(ellipseIn: CGRect(x: petalOffset, y: 0, width: petalWidth, height: rect.height / 2))
+            let rotatedPetal = originalPetal.applying(position)
+            path.addPath(rotatedPetal)
+        }
+        
+        return path
+    }
+}
+
 struct Day43: View {
     var body: some View {
         ScrollView {
-            Path { path in
-                path.move(to: CGPoint(x: 200, y: 100))
-                path.addLine(to: CGPoint(x: 100, y: 300))
-                path.addLine(to: CGPoint(x: 300, y: 300))
-                path.addLine(to: CGPoint(x: 200, y: 100))
-                // 선 끝부분 붙여줌
-                path.closeSubpath()
+            VStack {
+                VStack{
+                    Path { path in
+                        path.move(to: CGPoint(x: 200, y: 100))
+                        path.addLine(to: CGPoint(x: 100, y: 300))
+                        path.addLine(to: CGPoint(x: 300, y: 300))
+                        path.addLine(to: CGPoint(x: 200, y: 100))
+                        // 선 끝부분 붙여줌
+                        path.closeSubpath()
+                    }
+            //        .fill(.blue)
+            //        .stroke(.blue, lineWidth: 10)
+                    .stroke(.black, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
+                    
+                    Circle()
+                        .stroke(.green, lineWidth: 40)
+                    
+                    Circle()
+                        .strokeBorder(.green, lineWidth: 40)
+                    
+                    Triangle()
+                        .fill(.red)
+                        .frame(width: 30, height: 30)
+                    
+                    Triangle()
+                        .stroke(.red, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
+                        .frame(width: 25, height: 25)
+                    
+                    Arc(startAngle: .degrees(0), endAngle: .degrees(100), clockwise: true)
+                        .stroke(.blue, lineWidth: 10)
+                        .frame(width: 100, height: 100)
+                    
+                    Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
+                        .stroke(.blue, lineWidth: 5)
+                }
+                
+                NavigationLink("Day44", destination: Day44())
+                
+                
             }
-    //        .fill(.blue)
-    //        .stroke(.blue, lineWidth: 10)
-            .stroke(.blue, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-            
-            Circle()
-                .stroke(.blue, lineWidth: 40)
-            
-            Circle()
-                .strokeBorder(.blue, lineWidth: 40)
-            
-            Triangle()
-                .fill(.red)
-                .frame(width: 30, height: 30)
-            
-            Triangle()
-                .stroke(.red, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                .frame(width: 25, height: 25)
-            
-            Arc(startAngle: .degrees(0), endAngle: .degrees(100), clockwise: true)
-                .stroke(.blue, lineWidth: 10)
-                .frame(width: 100, height: 100)
-            
-            Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
-                .stroke(.blue, lineWidth: 5)
         }
     }
 }
