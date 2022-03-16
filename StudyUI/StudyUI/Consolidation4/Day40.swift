@@ -88,7 +88,7 @@ struct Day40: View {
                 LazyVGrid(columns: self.columns) {
                     ForEach(self.missoins) { mission in
                         NavigationLink {
-                            Text("Detail view")
+                            Day41(mission: mission, astronauts: self.astronauts)
                         } label: {
                             VStack {
                                 Image(mission.image)

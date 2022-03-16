@@ -32,6 +32,7 @@ struct Day39Address: Codable {
 
 struct Day39: View {
     @State private var decodeString: String = "decode"
+    
     @State private var showingDay40: Bool = false
     
     var body: some View {
