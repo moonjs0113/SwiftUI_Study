@@ -30,6 +30,7 @@ struct MainView: View {
                 Section("Consolidation IV") {
                     NavigationLink("Project 7", destination: Day36())
                     NavigationLink("Project 8", destination: Day39())
+                    NavigationLink("Project 9", destination: Day43())
                 }
             }
             .navigationTitle("SwiftUI Study App")

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C7037ECA27E220650003124A /* Day41.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7037EC927E220640003124A /* Day41.swift */; };
 		C7037ECC27E2263D0003124A /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7037ECB27E2263D0003124A /* AstronautView.swift */; };
+		C7037ECE27E22C1D0003124A /* Day43.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7037ECD27E22C1D0003124A /* Day43.swift */; };
 		C72B93DD27D0FC4B00A49A00 /* Day29.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B93DC27D0FC4B00A49A00 /* Day29.swift */; };
 		C72B93DF27D1023E00A49A00 /* Day30.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72B93DE27D1023E00A49A00 /* Day30.swift */; };
 		C72B93E127D1079A00A49A00 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = C72B93E027D1079A00A49A00 /* start.txt */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		C7037EC927E220640003124A /* Day41.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day41.swift; sourceTree = "<group>"; };
 		C7037ECB27E2263D0003124A /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		C7037ECD27E22C1D0003124A /* Day43.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day43.swift; sourceTree = "<group>"; };
 		C72B93DC27D0FC4B00A49A00 /* Day29.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day29.swift; sourceTree = "<group>"; };
 		C72B93DE27D1023E00A49A00 /* Day30.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day30.swift; sourceTree = "<group>"; };
 		C72B93E027D1079A00A49A00 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				C771264F27E0DE0F000CA0B3 /* Day40.swift */,
 				C7037EC927E220640003124A /* Day41.swift */,
 				C7037ECB27E2263D0003124A /* AstronautView.swift */,
+				C7037ECD27E22C1D0003124A /* Day43.swift */,
 				C771265227E0DFD1000CA0B3 /* astronauts.json */,
 				C771265127E0DFD1000CA0B3 /* missions.json */,
 			);
@@ -265,6 +268,7 @@
 				C7E45F2327DF8D7700148DA7 /* Day39_3.swift in Sources */,
 				C7E45F1C27DF87C500148DA7 /* Day39.swift in Sources */,
 				C7420D2427C3C34A00F8959E /* Day23.swift in Sources */,
+				C7037ECE27E22C1D0003124A /* Day43.swift in Sources */,
 				C7CD0EE027BE1B7300FB821B /* Day16.swift in Sources */,
 				C77A8D5D27CFA81B00C59679 /* Day27.swift in Sources */,
 				C72B93DF27D1023E00A49A00 /* Day30.swift in Sources */,
