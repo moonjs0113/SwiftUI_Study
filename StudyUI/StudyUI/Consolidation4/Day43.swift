@@ -88,8 +88,7 @@ struct Day43: View {
                 }
                 
                 NavigationLink("Day44", destination: Day44())
-                
-                
+                NavigationLink("Day45", destination: Day45())
             }
         }
     }
