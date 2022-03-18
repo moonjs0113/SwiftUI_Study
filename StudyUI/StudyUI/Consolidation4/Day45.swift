@@ -118,7 +118,7 @@ struct Spirograph: Shape {
     
     func path(in rect: CGRect) -> Path {
         let divisor = self.gcd(self.innerRadius, self.outerRadius)
-        let innerRadius = Double(self.outerRadius)
+        let innerRadius = Double(self.innerRadius)
         let outerRadius = Double(self.outerRadius)
         let distance = Double(self.distance)
         let difference = innerRadius - outerRadius
@@ -155,7 +155,7 @@ struct SpirographView: View {
         VStack(spacing: 0) {
             Spacer()
             Spirograph(innerRadius: Int(self.innerRadius), outerRadius: Int(self.outerRadius), distance: Int(self.distance), amount: self.amount)
-                .stroke(Color(hue: self.hue, saturation: 1, brightness: 1), lineWidth: 1)
+                .stroke(Color(hue: self.hue, saturation: 1, brightness: 1), lineWidth: 2)
                 .frame(width: 300, height: 300)
             
             Spacer()
@@ -170,7 +170,7 @@ struct SpirographView: View {
                     .padding([.horizontal, .bottom])
                 
                 Text("Distance: \(Int(self.distance))")
-                Slider(value: self.$distance, in: 10...150, step: 1)
+                Slider(value: self.$distance, in: 1...150, step: 1)
                     .padding([.horizontal, .bottom])
                 
                 Text("Amount: \(amount, format: .number.precision(.fractionLength(2)))")
