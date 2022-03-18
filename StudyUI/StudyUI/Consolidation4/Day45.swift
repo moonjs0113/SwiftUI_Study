@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Animating simple shapes with animatableData
 struct Trapezoid: Shape {
     var insetAmount: Double
     var animatableData: Double {
@@ -42,6 +43,7 @@ struct TrapezoidView: View {
     }
 }
 
+// Animating complex shapes with AnimatablePair
 struct Checkerboard: Shape {
     var rows: Int
     var columns: Int
@@ -94,6 +96,96 @@ struct CheckerboardView: View {
     }
 }
 
+// Creating a spirograph with SwiftUI
+struct Spirograph: Shape {
+    let innerRadius: Int
+    let outerRadius: Int
+    let distance: Int
+    let amount: Double
+
+    func gcd(_ a: Int, _ b: Int) -> Int {
+        var a = a
+        var b = b
+        
+        while b != 0 {
+            let temp = b
+            b = a % b
+            a = temp
+        }
+        
+        return a
+    }
+    
+    func path(in rect: CGRect) -> Path {
+        let divisor = self.gcd(self.innerRadius, self.outerRadius)
+        let innerRadius = Double(self.outerRadius)
+        let outerRadius = Double(self.outerRadius)
+        let distance = Double(self.distance)
+        let difference = innerRadius - outerRadius
+        let endPoint = ceil(2 * Double.pi * outerRadius / Double(divisor)) * self.amount
+        
+        var path = Path()
+        
+        for theta in stride(from: 0, through: endPoint, by: 0.01) {
+            var x = difference * cos(theta) + distance * cos(difference / outerRadius * theta)
+            var y = difference * sin(theta) - distance * sin(difference / outerRadius * theta)
+            
+            x += rect.width / 2
+            y += rect.height / 2
+            
+            if theta == 0 {
+                path.move(to: CGPoint(x: x, y: y))
+            } else {
+                path.addLine(to: CGPoint(x: x, y: y))
+            }
+        }
+        
+        return path
+    }
+}
+
+struct SpirographView: View {
+    @State private var innerRadius = 125.0
+    @State private var outerRadius = 75.0
+    @State private var distance = 25.0
+    @State private var amount = 1.0
+    @State private var hue = 0.6
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Spacer()
+            Spirograph(innerRadius: Int(self.innerRadius), outerRadius: Int(self.outerRadius), distance: Int(self.distance), amount: self.amount)
+                .stroke(Color(hue: self.hue, saturation: 1, brightness: 1), lineWidth: 1)
+                .frame(width: 300, height: 300)
+            
+            Spacer()
+            
+            Group {
+                Text("Inner radius: \(Int(self.innerRadius))")
+                Slider(value: self.$innerRadius, in: 10...150, step: 1)
+                    .padding([.horizontal, .bottom])
+                
+                Text("Outer radius: \(Int(self.outerRadius))")
+                Slider(value: self.$outerRadius, in: 10...150, step: 1)
+                    .padding([.horizontal, .bottom])
+                
+                Text("Distance: \(Int(self.distance))")
+                Slider(value: self.$distance, in: 10...150, step: 1)
+                    .padding([.horizontal, .bottom])
+                
+                Text("Amount: \(amount, format: .number.precision(.fractionLength(2)))")
+                Slider(value: self.$amount)
+                    .padding([.horizontal, .bottom])
+                
+                Text("Color")
+                Slider(value: self.$hue)
+                    .padding(.horizontal)
+            }
+        }
+    }
+}
+
+// Special effects in SwiftUI: blurs, blending, and more
 struct Day45: View {
     @State private var amount = 0.0
     
@@ -145,6 +237,7 @@ struct Day45: View {
                 
                 NavigationLink("Trapezoid", destination: TrapezoidView())
                 NavigationLink("CheckerboardView", destination: CheckerboardView())
+                NavigationLink("SpirographView", destination: SpirographView())
             }
             .frame(width: .infinity, height: .infinity)
             .background(.purple)
