@@ -76,19 +76,27 @@ struct Day49: View {
                         await self.loadData()
                     }
                 }
-            }
-            AsyncImage(url: URL(string: "https://hws.dev/img/bad.png")) { phase in
-                if let image = phase.image {
-                    image
+                
+                AsyncImage(url: URL(string: "https://hws.dev/img/logo.png"), scale: 1) { phase in
+                    phase
                         .resizable()
                         .scaledToFit()
-                } else if phase.error != nil {
-                    Text("There was an error loading the image.")
-                } else {
+//                    if let image = phase.image {
+//                        image
+//                            .resizable()
+//                            .scaledToFit()
+//                    } else if phase.error != nil {
+//                        Text("There was an error loading the image.")
+//                    } else {
+//                        ProgressView()
+//                    }
+                } placeholder: {
                     ProgressView()
                 }
+                .frame(width: 200, height: 200)
             }
-            .frame(width: 200, height: 200)
+            
+            
             
             Section {
                 TextField("Username", text: self.$username)
