@@ -101,6 +101,8 @@ struct Day49: View {
                 }
             }
             .disabled(self.disableForm)
+            
+            NavigationLink("Day50", destination: Day50())
         }
     }
 }

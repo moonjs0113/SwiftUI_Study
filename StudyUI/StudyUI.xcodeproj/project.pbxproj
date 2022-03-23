@@ -23,6 +23,7 @@
 		C73F60B727D73B5A00DC57DD /* Day37.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F60B627D73B5A00DC57DD /* Day37.swift */; };
 		C7420D2427C3C34A00F8959E /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7420D2327C3C34A00F8959E /* Day23.swift */; };
 		C74D181727D64BD900B68468 /* Day36.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74D181627D64BD900B68468 /* Day36.swift */; };
+		C758762227EB21A600D6EE87 /* Day50.swift in Sources */ = {isa = PBXBuildFile; fileRef = C758762127EB21A600D6EE87 /* Day50.swift */; };
 		C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771264F27E0DE0F000CA0B3 /* Day40.swift */; };
 		C771265327E0DFD1000CA0B3 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265127E0DFD1000CA0B3 /* missions.json */; };
 		C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265227E0DFD1000CA0B3 /* astronauts.json */; };
@@ -64,6 +65,7 @@
 		C73F60B627D73B5A00DC57DD /* Day37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day37.swift; sourceTree = "<group>"; };
 		C7420D2327C3C34A00F8959E /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
 		C74D181627D64BD900B68468 /* Day36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day36.swift; sourceTree = "<group>"; };
+		C758762127EB21A600D6EE87 /* Day50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day50.swift; sourceTree = "<group>"; };
 		C771264F27E0DE0F000CA0B3 /* Day40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day40.swift; sourceTree = "<group>"; };
 		C771265127E0DFD1000CA0B3 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		C771265227E0DFD1000CA0B3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C71E6AC627EA0F5000629B48 /* Day49.swift */,
+				C758762127EB21A600D6EE87 /* Day50.swift */,
 			);
 			path = Consolidation5;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C7CD0EE027BE1B7300FB821B /* Day16.swift in Sources */,
 				C77A8D5D27CFA81B00C59679 /* Day27.swift in Sources */,
 				C72B93DF27D1023E00A49A00 /* Day30.swift in Sources */,
+				C758762227EB21A600D6EE87 /* Day50.swift in Sources */,
 				C7E9EBAD27D4B1C800E80F8D /* Day33.swift in Sources */,
 				C73A4D7D27CBBC2A00B2769E /* Day26.swift in Sources */,
 				C72B93DD27D0FC4B00A49A00 /* Day29.swift in Sources */,
