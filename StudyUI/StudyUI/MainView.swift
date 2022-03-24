@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var dataController = DataController()
+    
     var body: some View {
         NavigationView{
             Form {
@@ -35,6 +37,9 @@ struct MainView: View {
                 
                 Section("Consolidation V") {
                     NavigationLink("Project 10", destination: Day49())
+                    NavigationLink("Project 11", destination: Day53()
+                                    .environment(\.managedObjectContext, self.dataController.container.viewContext)
+                    )
                 }
             }
             .navigationTitle("SwiftUI Study App")
