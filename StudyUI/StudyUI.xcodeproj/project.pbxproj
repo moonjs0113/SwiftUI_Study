@@ -36,6 +36,7 @@
 		C7A213DE27E3899B000BC5C4 /* P9.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A213DD27E3899B000BC5C4 /* P9.xcassets */; };
 		C7AFD6D327ECA99300E829DB /* Day53.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AFD6D227ECA99300E829DB /* Day53.swift */; };
 		C7AFD6D627ECCF8F00E829DB /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7AFD6D427ECCF8F00E829DB /* Bookworm.xcdatamodeld */; };
+		C7AFD6D827ECD35C00E829DB /* Day54.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AFD6D727ECD35C00E829DB /* Day54.swift */; };
 		C7B601D027DE36410005F02D /* AddView37.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B601CF27DE36410005F02D /* AddView37.swift */; };
 		C7C74BA127C468E50041002F /* Day23_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C74BA027C468E50041002F /* Day23_2.swift */; };
 		C7CD0EDE27BE1B7300FB821B /* StudyUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD0EDD27BE1B7300FB821B /* StudyUIApp.swift */; };
@@ -80,6 +81,7 @@
 		C7A213DD27E3899B000BC5C4 /* P9.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = P9.xcassets; sourceTree = "<group>"; };
 		C7AFD6D227ECA99300E829DB /* Day53.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day53.swift; sourceTree = "<group>"; };
 		C7AFD6D527ECCF8F00E829DB /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
+		C7AFD6D727ECD35C00E829DB /* Day54.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day54.swift; sourceTree = "<group>"; };
 		C7B601CF27DE36410005F02D /* AddView37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView37.swift; sourceTree = "<group>"; };
 		C7C74BA027C468E50041002F /* Day23_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23_2.swift; sourceTree = "<group>"; };
 		C7CD0EDA27BE1B7300FB821B /* SwiftUI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				C758762127EB21A600D6EE87 /* Day50.swift */,
 				C7AFD6D227ECA99300E829DB /* Day53.swift */,
 				C7AFD6D427ECCF8F00E829DB /* Bookworm.xcdatamodeld */,
+				C7AFD6D727ECD35C00E829DB /* Day54.swift */,
 			);
 			path = Consolidation5;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C77F3E1227C273E9002681B9 /* Day21.swift in Sources */,
 				C7E9EBAB27D49E4A00E80F8D /* Day32.swift in Sources */,
 				C72D9EAC27C0F2E200519438 /* Day20.swift in Sources */,
+				C7AFD6D827ECD35C00E829DB /* Day54.swift in Sources */,
 				C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */,
 				C7E45F2127DF8B6900148DA7 /* Day39_2.swift in Sources */,
 				C7CD0EDE27BE1B7300FB821B /* StudyUIApp.swift in Sources */,

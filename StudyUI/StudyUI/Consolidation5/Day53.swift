@@ -32,6 +32,7 @@ struct Day53: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student53>
     
+    
     var body: some View {
         VStack {
             Toggle("Remember Me", isOn: self.$rememberMe)
@@ -43,6 +44,8 @@ struct Day53: View {
                 TextEditor(text: self.$notes)
                     .padding()
             }
+            
+            NavigationLink("Day54", destination: Day54())
             
             Form {
                 List(self.students) { student in
