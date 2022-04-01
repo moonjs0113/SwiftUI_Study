@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var dataController = DataController()
+    @StateObject private var dataController11 = DataController(containerName: "Bookworm")
+    @StateObject private var dataController12 = DataController(containerName: "Prjc12")
     
     var body: some View {
         NavigationView{
@@ -38,7 +39,10 @@ struct MainView: View {
                 Section("Consolidation V") {
                     NavigationLink("Project 10", destination: Day49())
                     NavigationLink("Project 11", destination: Day53()
-                                    .environment(\.managedObjectContext, self.dataController.container.viewContext)
+                                    .environment(\.managedObjectContext, self.dataController11.container.viewContext)
+                    )
+                    NavigationLink("Project 12", destination: Day57()
+                                    .environment(\.managedObjectContext, self.dataController12.container.viewContext)
                     )
                 }
             }

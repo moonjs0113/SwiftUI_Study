@@ -24,6 +24,18 @@
 		C7420D2427C3C34A00F8959E /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7420D2327C3C34A00F8959E /* Day23.swift */; };
 		C74D181727D64BD900B68468 /* Day36.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74D181627D64BD900B68468 /* Day36.swift */; };
 		C758762227EB21A600D6EE87 /* Day50.swift in Sources */ = {isa = PBXBuildFile; fileRef = C758762127EB21A600D6EE87 /* Day50.swift */; };
+		C75FE8BC27F7466D00E9E44A /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B427F7466D00E9E44A /* Candy+CoreDataProperties.swift */; };
+		C75FE8BD27F7466D00E9E44A /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B527F7466D00E9E44A /* Movie+CoreDataProperties.swift */; };
+		C75FE8BE27F7466D00E9E44A /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B627F7466D00E9E44A /* Country+CoreDataClass.swift */; };
+		C75FE8BF27F7466D00E9E44A /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B727F7466D00E9E44A /* Singer+CoreDataClass.swift */; };
+		C75FE8C027F7466D00E9E44A /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B827F7466D00E9E44A /* Singer+CoreDataProperties.swift */; };
+		C75FE8C127F7466D00E9E44A /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8B927F7466D00E9E44A /* Movie+CoreDataClass.swift */; };
+		C75FE8C227F7466D00E9E44A /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8BA27F7466D00E9E44A /* Candy+CoreDataClass.swift */; };
+		C75FE8C327F7466D00E9E44A /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8BB27F7466D00E9E44A /* Country+CoreDataProperties.swift */; };
+		C75FE8C927F746B600E9E44A /* Prjc12.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C527F746B600E9E44A /* Prjc12.xcdatamodeld */; };
+		C75FE8CA27F746B600E9E44A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C727F746B600E9E44A /* DataController.swift */; };
+		C75FE8CB27F746B600E9E44A /* Day57.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C827F746B600E9E44A /* Day57.swift */; };
+		C75FE8CD27F7490900E9E44A /* P11.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75FE8CC27F7490900E9E44A /* P11.xcassets */; };
 		C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771264F27E0DE0F000CA0B3 /* Day40.swift */; };
 		C771265327E0DFD1000CA0B3 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265127E0DFD1000CA0B3 /* missions.json */; };
 		C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265227E0DFD1000CA0B3 /* astronauts.json */; };
@@ -69,6 +81,18 @@
 		C7420D2327C3C34A00F8959E /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
 		C74D181627D64BD900B68468 /* Day36.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day36.swift; sourceTree = "<group>"; };
 		C758762127EB21A600D6EE87 /* Day50.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day50.swift; sourceTree = "<group>"; };
+		C75FE8B427F7466D00E9E44A /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C75FE8B527F7466D00E9E44A /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C75FE8B627F7466D00E9E44A /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C75FE8B727F7466D00E9E44A /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C75FE8B827F7466D00E9E44A /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C75FE8B927F7466D00E9E44A /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C75FE8BA27F7466D00E9E44A /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C75FE8BB27F7466D00E9E44A /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C75FE8C627F746B600E9E44A /* StudyUI2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyUI2.xcdatamodel; sourceTree = "<group>"; };
+		C75FE8C727F746B600E9E44A /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = ../../../StudyUI2/StudyUI2/DataController.swift; sourceTree = "<group>"; };
+		C75FE8C827F746B600E9E44A /* Day57.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day57.swift; path = ../../../StudyUI2/StudyUI2/Day57.swift; sourceTree = "<group>"; };
+		C75FE8CC27F7490900E9E44A /* P11.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = P11.xcassets; sourceTree = "<group>"; };
 		C771264F27E0DE0F000CA0B3 /* Day40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day40.swift; sourceTree = "<group>"; };
 		C771265127E0DFD1000CA0B3 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		C771265227E0DFD1000CA0B3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
@@ -116,6 +140,9 @@
 				C7AFD6D227ECA99300E829DB /* Day53.swift */,
 				C7AFD6D427ECCF8F00E829DB /* Bookworm.xcdatamodeld */,
 				C7AFD6D727ECD35C00E829DB /* Day54.swift */,
+				C75FE8C827F746B600E9E44A /* Day57.swift */,
+				C75FE8C727F746B600E9E44A /* DataController.swift */,
+				C75FE8C427F7467E00E9E44A /* CoreDataPrjc12 */,
 			);
 			path = Consolidation5;
 			sourceTree = "<group>";
@@ -154,6 +181,22 @@
 				C771265127E0DFD1000CA0B3 /* missions.json */,
 			);
 			path = Consolidation4;
+			sourceTree = "<group>";
+		};
+		C75FE8C427F7467E00E9E44A /* CoreDataPrjc12 */ = {
+			isa = PBXGroup;
+			children = (
+				C75FE8C527F746B600E9E44A /* Prjc12.xcdatamodeld */,
+				C75FE8BA27F7466D00E9E44A /* Candy+CoreDataClass.swift */,
+				C75FE8B427F7466D00E9E44A /* Candy+CoreDataProperties.swift */,
+				C75FE8B627F7466D00E9E44A /* Country+CoreDataClass.swift */,
+				C75FE8BB27F7466D00E9E44A /* Country+CoreDataProperties.swift */,
+				C75FE8B927F7466D00E9E44A /* Movie+CoreDataClass.swift */,
+				C75FE8B527F7466D00E9E44A /* Movie+CoreDataProperties.swift */,
+				C75FE8B727F7466D00E9E44A /* Singer+CoreDataClass.swift */,
+				C75FE8B827F7466D00E9E44A /* Singer+CoreDataProperties.swift */,
+			);
+			path = CoreDataPrjc12;
 			sourceTree = "<group>";
 		};
 		C7956B0A27BF8FF0005A5DB7 /* Consolidation2 */ = {
@@ -217,6 +260,7 @@
 				C77F3E0F27C27107002681B9 /* countries.xcassets */,
 				C7E45F1D27DF87ED00148DA7 /* P8.xcassets */,
 				C7A213DD27E3899B000BC5C4 /* P9.xcassets */,
+				C75FE8CC27F7490900E9E44A /* P11.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -284,6 +328,7 @@
 				C7E45F1E27DF87ED00148DA7 /* P8.xcassets in Resources */,
 				C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */,
 				C72B93E127D1079A00A49A00 /* start.txt in Resources */,
+				C75FE8CD27F7490900E9E44A /* P11.xcassets in Resources */,
 				C7CD0EE227BE1B7400FB821B /* Assets.xcassets in Resources */,
 				C771265327E0DFD1000CA0B3 /* missions.json in Resources */,
 				C77F3E1027C27107002681B9 /* countries.xcassets in Resources */,
@@ -299,15 +344,23 @@
 			files = (
 				C7037ED027E23CFC0003124A /* Day44.swift in Sources */,
 				C72D9EA827C0F11D00519438 /* ChallengeView.swift in Sources */,
+				C75FE8C327F7466D00E9E44A /* Country+CoreDataProperties.swift in Sources */,
 				C7E45F2327DF8D7700148DA7 /* Day39_3.swift in Sources */,
 				C7E45F1C27DF87C500148DA7 /* Day39.swift in Sources */,
+				C75FE8CA27F746B600E9E44A /* DataController.swift in Sources */,
+				C75FE8BD27F7466D00E9E44A /* Movie+CoreDataProperties.swift in Sources */,
 				C7420D2427C3C34A00F8959E /* Day23.swift in Sources */,
+				C75FE8C927F746B600E9E44A /* Prjc12.xcdatamodeld in Sources */,
 				C7037ECE27E22C1D0003124A /* Day43.swift in Sources */,
+				C75FE8BF27F7466D00E9E44A /* Singer+CoreDataClass.swift in Sources */,
+				C75FE8C127F7466D00E9E44A /* Movie+CoreDataClass.swift in Sources */,
 				C7CD0EE027BE1B7300FB821B /* Day16.swift in Sources */,
 				C77A8D5D27CFA81B00C59679 /* Day27.swift in Sources */,
 				C72B93DF27D1023E00A49A00 /* Day30.swift in Sources */,
 				C758762227EB21A600D6EE87 /* Day50.swift in Sources */,
 				C7E9EBAD27D4B1C800E80F8D /* Day33.swift in Sources */,
+				C75FE8C027F7466D00E9E44A /* Singer+CoreDataProperties.swift in Sources */,
+				C75FE8BC27F7466D00E9E44A /* Candy+CoreDataProperties.swift in Sources */,
 				C73A4D7D27CBBC2A00B2769E /* Day26.swift in Sources */,
 				C7AFD6D327ECA99300E829DB /* Day53.swift in Sources */,
 				C72B93DD27D0FC4B00A49A00 /* Day29.swift in Sources */,
@@ -318,6 +371,7 @@
 				C77F3E1227C273E9002681B9 /* Day21.swift in Sources */,
 				C7E9EBAB27D49E4A00E80F8D /* Day32.swift in Sources */,
 				C72D9EAC27C0F2E200519438 /* Day20.swift in Sources */,
+				C75FE8C227F7466D00E9E44A /* Candy+CoreDataClass.swift in Sources */,
 				C7AFD6D827ECD35C00E829DB /* Day54.swift in Sources */,
 				C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */,
 				C7E45F2127DF8B6900148DA7 /* Day39_2.swift in Sources */,
@@ -326,8 +380,10 @@
 				C7AFD6D627ECCF8F00E829DB /* Bookworm.xcdatamodeld in Sources */,
 				C7A213DC27E3871F000BC5C4 /* Day45.swift in Sources */,
 				C7037ECA27E220650003124A /* Day41.swift in Sources */,
+				C75FE8BE27F7466D00E9E44A /* Country+CoreDataClass.swift in Sources */,
 				C72D9EAA27C0F15F00519438 /* MainView.swift in Sources */,
 				C7037ECC27E2263D0003124A /* AstronautView.swift in Sources */,
+				C75FE8CB27F746B600E9E44A /* Day57.swift in Sources */,
 				C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */,
 				C7956B0C27BF902A005A5DB7 /* Day16_2.swift in Sources */,
 				C73B126F27C605C300C77968 /* Consolidation2.swift in Sources */,
@@ -535,6 +591,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		C75FE8C527F746B600E9E44A /* Prjc12.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C75FE8C627F746B600E9E44A /* StudyUI2.xcdatamodel */,
+			);
+			currentVersion = C75FE8C627F746B600E9E44A /* StudyUI2.xcdatamodel */;
+			path = Prjc12.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		C7AFD6D427ECCF8F00E829DB /* Bookworm.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

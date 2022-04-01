@@ -10,43 +10,62 @@ import CoreData
 
 struct Day54: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.title),
+        SortDescriptor(\.author)
+        //        SortDescriptor(\.title, order: .reverse) // 반대로
+    ]) var books: FetchedResults<Book>
     
     @State private var showingAddScreen = false
     
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            self.moc.delete(book)
+        }
+        try? self.moc.save()
+    }
+    
     var body: some View {
-        Form {
-            List {
-                ForEach(self.books) { book in
-                    NavigationLink {
-                        Text(book.title ?? "Unknown Title")
-                    } label: {
-                        HStack {
-                            EmojiRatingView(rating: book.rating)
-                                .font(.largeTitle)
-                            VStack(alignment: .leading) {
-                                Text(book.title ?? "Unknown Title")
-                                    .font(.headline)
-                                Text(book.author ?? "Unknown Author")
-                                    .foregroundColor(.secondary)
+        NavigationView {
+            Form {
+                List {
+                    ForEach(self.books) { book in
+                        NavigationLink {
+                            DetailView(book: book)
+                        } label: {
+                            HStack {
+                                EmojiRatingView(rating: book.rating)
+                                    .font(.largeTitle)
+                                VStack(alignment: .leading) {
+                                    Text(book.title ?? "Unknown Title")
+                                        .font(.headline)
+                                    Text(book.author ?? "Unknown Author")
+                                        .foregroundColor(.secondary)
+                                }
                             }
                         }
+                    }.onDelete(perform: self.deleteBooks)
+                }
+            }
+            .navigationTitle("Bookworm")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showingAddScreen.toggle()
+                    } label: {
+                        Label("Add Book", systemImage: "plus")
                     }
                 }
+                
             }
-        }
-        .navigationTitle("Bookworm")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    self.showingAddScreen.toggle()
-                } label: {
-                    Label("Add Book", systemImage: "plus")
-                }
+            .sheet(isPresented: self.$showingAddScreen) {
+                AddBookView()
             }
-        }
-        .sheet(isPresented: self.$showingAddScreen) {
-            AddBookView()
         }
     }
 }
@@ -83,11 +102,11 @@ struct RatingView: View {
     
     func image(for number: Int) -> Image {
         return number > self.rating ? self.offImage ?? self.onImage : self.onImage
-//        if number > self.rating {
-//            return self.offImage ?? self.onImage
-//        } else {
-//            return self.onImage
-//        }
+        //        if number > self.rating {
+        //            return self.offImage ?? self.onImage
+        //        } else {
+        //            return self.onImage
+        //        }
     }
     
     var body: some View {
@@ -121,45 +140,104 @@ struct AddBookView: View {
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
     var body: some View {
-        Form {
-            Section {
-                TextField("Name of book", text: self.$title)
-                TextField("Author's name", text: self.$author)
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Name of book", text: self.$title)
+                    TextField("Author's name", text: self.$author)
+                    
+                    Picker("Genre", selection: self.$genre) {
+                        ForEach(self.genres, id: \.self) { genre in
+                            Text(genre)
+                        }
+                    }
+                }
                 
-                Picker("Genre", selection: self.$genre) {
-                    ForEach(self.genres, id: \.self) { genre in
-                        Text(genre)
+                Section {
+                    TextEditor(text: self.$review)
+                    RatingView(rating: self.$rating)
+                    //                Picker("Rating", selection: self.$rating) {
+                    //                    ForEach(0..<6) { rating in
+                    //                        Text(String(rating))
+                    //                    }
+                    //                }
+                } header: {
+                    Text("Write a review")
+                }
+                
+                Section {
+                    Button("Save") {
+                        let newBook = Book(context: moc)
+                        newBook.id = UUID()
+                        newBook.title = self.title
+                        newBook.author = self.author
+                        newBook.rating = Int16(self.rating)
+                        newBook.genre = self.genre
+                        newBook.review = self.review
+                        
+                        try? moc.save()
+                        dismiss()
                     }
                 }
             }
-            
-            Section {
-                TextEditor(text: self.$review)
-                RatingView(rating: self.$rating)
-//                Picker("Rating", selection: self.$rating) {
-//                    ForEach(0..<6) { rating in
-//                        Text(String(rating))
-//                    }
-//                }
-            } header: {
-                Text("Write a review")
+            .navigationTitle("Add Book")
+        }
+    }
+}
+
+struct DetailView: View {
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
+    @State private var showingDeleteAlert = false
+    
+    let book: Book
+    
+    func deleteBook() {
+        self.moc.delete(self.book)
+        self.dismiss()
+    }
+    
+    var body: some View {
+        ScrollView {
+            ZStack(alignment: .bottomTrailing) {
+                Image(self.book.genre ?? "Fantasy")
+                    .resizable()
+                    .scaledToFit()
+                
+                Text(self.book.genre?.uppercased() ?? "FANTASY")
+                    .font(.caption)
+                    .fontWeight(.black)
+                    .padding(8)
+                    .foregroundColor(.white)
+                    .background(.black.opacity(0.75))
+                    .clipShape(Capsule())
+                    .offset(x: -5, y: -5)
             }
+            Text(self.book.author ?? "Unknown author")
+                .font(.title)
+                .foregroundColor(.secondary)
             
-            Section {
-                Button("Save") {
-                    let newBook = Book(context: moc)
-                    newBook.id = UUID()
-                    newBook.title = self.title
-                    newBook.author = self.author
-                    newBook.rating = Int16(self.rating)
-                    newBook.genre = self.genre
-                    newBook.review = self.review
-                    
-                    try? moc.save()
-                }
+            Text(self.book.review ?? "No review")
+                .padding()
+            
+            RatingView(rating: .constant(Int(self.book.rating)))
+                .font(.largeTitle)
+        }
+        .navigationTitle(self.book.title ?? "Unknown Book")
+        .navigationBarTitleDisplayMode(.inline)
+        .alert("Delete book", isPresented: self.$showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: self.deleteBook)
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure?")
+        }
+        .toolbar {
+            Button {
+                self.showingDeleteAlert = true
+            } label: {
+                Label("Delete this book", systemImage: "trash")
             }
         }
-        .navigationTitle("Add Book")
     }
 }
 

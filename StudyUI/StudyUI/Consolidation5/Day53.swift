@@ -13,17 +13,17 @@ import CoreData
 //    var name: String
 //}
 
-class DataController: ObservableObject {
-    let container = NSPersistentContainer(name: "Bookworm")
-    
-    init() {
-        self.container.loadPersistentStores { description, error in
-            if let error = error {
-                print("Core Data Failed to load: \(error.localizedDescription)")
-            }
-        }
-    }
-}
+//class DataController: ObservableObject {
+//    let container = NSPersistentContainer(name: "Bookworm")
+//
+//    init() {
+//        self.container.loadPersistentStores { description, error in
+//            if let error = error {
+//                print("Core Data Failed to load: \(error.localizedDescription)")
+//            }
+//        }
+//    }
+//}
 
 struct Day53: View {
     @State private var rememberMe = false
@@ -32,6 +32,7 @@ struct Day53: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student53>
     
+    @State private var showingDay54 = false
     
     var body: some View {
         VStack {
@@ -45,7 +46,13 @@ struct Day53: View {
                     .padding()
             }
             
-            NavigationLink("Day54", destination: Day54())
+//            NavigationLink("Day54", destination: Day54())
+            Button("Day54") {
+                self.showingDay54.toggle()
+            }
+            .sheet(isPresented: self.$showingDay54) {
+                Day54()
+            }
             
             Form {
                 List(self.students) { student in
