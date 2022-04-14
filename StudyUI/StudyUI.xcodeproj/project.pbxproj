@@ -33,9 +33,9 @@
 		C75FE8C227F7466D00E9E44A /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8BA27F7466D00E9E44A /* Candy+CoreDataClass.swift */; };
 		C75FE8C327F7466D00E9E44A /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8BB27F7466D00E9E44A /* Country+CoreDataProperties.swift */; };
 		C75FE8C927F746B600E9E44A /* Prjc12.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C527F746B600E9E44A /* Prjc12.xcdatamodeld */; };
-		C75FE8CA27F746B600E9E44A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C727F746B600E9E44A /* DataController.swift */; };
-		C75FE8CB27F746B600E9E44A /* Day57.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8C827F746B600E9E44A /* Day57.swift */; };
 		C75FE8CD27F7490900E9E44A /* P11.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75FE8CC27F7490900E9E44A /* P11.xcassets */; };
+		C75FE8D027F7534100E9E44A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8CE27F7534100E9E44A /* DataController.swift */; };
+		C75FE8D127F7534100E9E44A /* Day57.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FE8CF27F7534100E9E44A /* Day57.swift */; };
 		C771265027E0DE0F000CA0B3 /* Day40.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771264F27E0DE0F000CA0B3 /* Day40.swift */; };
 		C771265327E0DFD1000CA0B3 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265127E0DFD1000CA0B3 /* missions.json */; };
 		C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265227E0DFD1000CA0B3 /* astronauts.json */; };
@@ -90,9 +90,9 @@
 		C75FE8BA27F7466D00E9E44A /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C75FE8BB27F7466D00E9E44A /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C75FE8C627F746B600E9E44A /* StudyUI2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyUI2.xcdatamodel; sourceTree = "<group>"; };
-		C75FE8C727F746B600E9E44A /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = ../../../StudyUI2/StudyUI2/DataController.swift; sourceTree = "<group>"; };
-		C75FE8C827F746B600E9E44A /* Day57.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day57.swift; path = ../../../StudyUI2/StudyUI2/Day57.swift; sourceTree = "<group>"; };
 		C75FE8CC27F7490900E9E44A /* P11.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = P11.xcassets; sourceTree = "<group>"; };
+		C75FE8CE27F7534100E9E44A /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		C75FE8CF27F7534100E9E44A /* Day57.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day57.swift; sourceTree = "<group>"; };
 		C771264F27E0DE0F000CA0B3 /* Day40.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day40.swift; sourceTree = "<group>"; };
 		C771265127E0DFD1000CA0B3 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		C771265227E0DFD1000CA0B3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 				C7AFD6D227ECA99300E829DB /* Day53.swift */,
 				C7AFD6D427ECCF8F00E829DB /* Bookworm.xcdatamodeld */,
 				C7AFD6D727ECD35C00E829DB /* Day54.swift */,
-				C75FE8C827F746B600E9E44A /* Day57.swift */,
-				C75FE8C727F746B600E9E44A /* DataController.swift */,
+				C75FE8CF27F7534100E9E44A /* Day57.swift */,
+				C75FE8CE27F7534100E9E44A /* DataController.swift */,
 				C75FE8C427F7467E00E9E44A /* CoreDataPrjc12 */,
 			);
 			path = Consolidation5;
@@ -347,7 +347,6 @@
 				C75FE8C327F7466D00E9E44A /* Country+CoreDataProperties.swift in Sources */,
 				C7E45F2327DF8D7700148DA7 /* Day39_3.swift in Sources */,
 				C7E45F1C27DF87C500148DA7 /* Day39.swift in Sources */,
-				C75FE8CA27F746B600E9E44A /* DataController.swift in Sources */,
 				C75FE8BD27F7466D00E9E44A /* Movie+CoreDataProperties.swift in Sources */,
 				C7420D2427C3C34A00F8959E /* Day23.swift in Sources */,
 				C75FE8C927F746B600E9E44A /* Prjc12.xcdatamodeld in Sources */,
@@ -382,9 +381,10 @@
 				C7037ECA27E220650003124A /* Day41.swift in Sources */,
 				C75FE8BE27F7466D00E9E44A /* Country+CoreDataClass.swift in Sources */,
 				C72D9EAA27C0F15F00519438 /* MainView.swift in Sources */,
+				C75FE8D127F7534100E9E44A /* Day57.swift in Sources */,
 				C7037ECC27E2263D0003124A /* AstronautView.swift in Sources */,
-				C75FE8CB27F746B600E9E44A /* Day57.swift in Sources */,
 				C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */,
+				C75FE8D027F7534100E9E44A /* DataController.swift in Sources */,
 				C7956B0C27BF902A005A5DB7 /* Day16_2.swift in Sources */,
 				C73B126F27C605C300C77968 /* Consolidation2.swift in Sources */,
 			);

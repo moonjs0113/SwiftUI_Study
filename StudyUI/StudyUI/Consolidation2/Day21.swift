@@ -68,7 +68,7 @@ struct Day21: View, FlagDelegate {
                 .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
                 .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3),
             ], center: .top, startRadius: 200, endRadius: 400)
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             VStack {
                 HStack(alignment: .center, spacing: 10) {
                     VStack{
@@ -84,17 +84,17 @@ struct Day21: View, FlagDelegate {
                             let flagImage = FlagImage(index: number, flagDelegate: self)
                             flagImage
                                 .rotation3DEffect(.degrees(self.animationAmount),
-                                                       axis: (x: 0, y: 1, z: 0))
+                                                  axis: (x: 0, y: 1, z: 0))
                                 .opacity(self.animationOpacity)
-//                            if number == self.correctAnswer {
-//                                flagImage
-//                                    .rotation3DEffect(.degrees(self.animationAmount),
-//                                                           axis: (x: 0, y: 1, z: 0))
-//                            } else {
-//                                flagImage
-//                            }
-//
-//                            flagImage
+                            //                            if number == self.correctAnswer {
+                            //                                flagImage
+                            //                                    .rotation3DEffect(.degrees(self.animationAmount),
+                            //                                                           axis: (x: 0, y: 1, z: 0))
+                            //                            } else {
+                            //                                flagImage
+                            //                            }
+                            //
+                            //                            flagImage
                         }
                     }
                 }
