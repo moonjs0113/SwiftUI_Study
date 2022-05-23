@@ -17,6 +17,12 @@ struct CodableUser: Codable {
 class User36: ObservableObject {
     // @Published: ObservableObject의 상태 구독할 변수
     @Published var firstName = "Bilbo"
+     var lastName = "Baggins"
+}
+
+class User36_2: ObservableObject {
+    // @Published: ObservableObject의 상태 구독할 변수
+    @Published var firstName = "Bilbo"
     @Published var lastName = "Baggins"
 }
 
@@ -24,25 +30,45 @@ struct SecondView: View {
     @Environment(\.dismiss) var dismiss
     
     let name: String
+    @SceneStorage("SCENE_TAP") private var AppStorageTapCount = 0
+    @State private var tapCount: Int = UserDefaults.standard.integer(forKey: "Tap")
+    
+    let centerPosition : (GeometryProxy) -> CGPoint = { proxy in
+        return CGPoint(x: proxy.frame(in: .local).midX,
+                       y: proxy.frame(in: .local).midY)
+    }
     
     var body: some View {
-        Text("Hello, \(self.name)")
-        Button("Dismiss") {
-            self.dismiss()
+        GeometryReader { proxy in
+            VStack {
+                Text("Hello, \(self.name), \(self.AppStorageTapCount), \(tapCount)")
+                Button("SceneStorage") {
+                    self.AppStorageTapCount += 2
+                }
+                .padding()
+                Button("Dismiss") {
+                    self.dismiss()
+                }
+            }
+            .position(x: self.centerPosition(proxy).x,
+                      y: self.centerPosition(proxy).y)
         }
     }
 }
 
 struct Day36: View {
-    // @StateObject: Custom Objfect일때 사용하는 듯
-    @StateObject private var user = User36()
+    // @StateObject: Custom Object일때 사용하는 듯
+    @ObservedObject private var user = User36()
+    @StateObject private var user2 = User36_2()
     @State private var showingSheet = false
     
     @State private var numbers = [Int]()
     @State private var currentNumber = 1
     
-    @State private var tapCount: Int = UserDefaults.standard.integer(forKey: "Tap")
+    @State private var tapCount: Int = UserDefaults.standard.integer(forKey: "tapCount")
     @AppStorage("tapCount") private var AppStorageTapCount = 0
+    @SceneStorage("tapCount") private var sceneStorageTapCount = 0
+    @SceneStorage("text") var text = ""
     
     @State private var codableUser = CodableUser(firstName: "Taylor", lastName: "Swift")
     @State private var loadCodableUser: CodableUser?
@@ -54,9 +80,18 @@ struct Day36: View {
     
     var body: some View {
         VStack(spacing: 15) {
-            Text("Your name is \(self.user.firstName) \(self.user.lastName)")
-            TextField("First name", text: self.$user.firstName)
-            TextField("Last name", text: self.$user.lastName)
+            VStack{
+                Text("Your name is \(self.user.firstName) \(self.user.lastName)")
+                TextField("First name", text: self.$user.firstName)
+                TextField("Last name", text: self.$user.lastName)
+                TextEditor(text: $text)
+            }
+            
+            VStack{
+                Text("Your name is \(self.user2.firstName) \(self.user2.lastName)")
+                TextField("First name", text: self.$user2.firstName)
+            }
+            
             
             Button("Show sheet") {
                 self.showingSheet.toggle()
@@ -75,6 +110,7 @@ struct Day36: View {
             Button("Add Number") {
                 self.numbers.append(self.currentNumber)
                 self.currentNumber += 1
+                self.user2.firstName = (self.user2.firstName == "asdf") ? "1234135" : "asdf"
             }
             
             NavigationLink("Day37", destination: Day37())
@@ -82,11 +118,15 @@ struct Day36: View {
             VStack(spacing: 10) {
                 Button("UserDefaults Tap count: \(self.tapCount)") {
                     self.tapCount += 1
-                    UserDefaults.standard.set(self.tapCount, forKey: "Tap")
+                    UserDefaults.standard.set(self.tapCount, forKey: "tapCount")
                 }
                 
                 Button("AppStorage Tap count: \(self.AppStorageTapCount)") {
                     self.AppStorageTapCount += 1
+                }
+                
+                Button("SceneStorage Tap count: \(self.sceneStorageTapCount)") {
+                    self.sceneStorageTapCount += 1
                 }
                 
                 Button("Save Codable User") {

@@ -31,6 +31,8 @@ struct Day29: View {
             }
             
         }.listStyle(.grouped)
+            //.colorMultiply(.blue)
+            .background((Color.blue))//
     }
 }
 

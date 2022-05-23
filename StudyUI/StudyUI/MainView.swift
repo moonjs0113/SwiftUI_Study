@@ -11,17 +11,39 @@ struct MainView: View {
     @StateObject private var dataController11 = DataController(containerName: "Bookworm")
     @StateObject private var dataController12 = DataController(containerName: "Prjc12")
     
+    @Binding var imageData: Data
+    @Binding var metaData: String
+    
+    @State private var showDictionary = false
+    
+    var text: [String] = ["Text", "Button", "Stack", "NavigationView"]
+    
     var body: some View {
         NavigationView{
             Form {
+                Section("실험실") {
+                    
+                    NavigationLink("ViewDrawing", destination: WrappedViewDrawing())
+                    
+                    NavigationLink("ScrollPinView", destination: ScrollPinView())
+                    NavigationLink("Method Swizzling", destination: MethodSwizzling())
+                }
+                Section {
+                    ForEach(self.text, id:\.self) { title in
+                        NavigationLink("\(title)", destination: Text(title))
+                    }
+                }
+                
                 Section {
                     NavigationLink("Project 1", destination: Day16())
                     NavigationLink("Project 2", destination: Day20())
                     NavigationLink("Project 3", destination: Day23())
+                    NavigationLink("뫼비우스", destination: MainView(imageData: self.$imageData, metaData: self.$metaData))
                     NavigationLink("Consolidation II", destination: Consolidation2())
-                    
                 } header: {
                     Text("Consolidation II")
+                        .font(.title)
+                        .fontWeight(.heavy)
                 }
                 
                 Section("Consolidation III") {
@@ -45,15 +67,45 @@ struct MainView: View {
                                     .environment(\.managedObjectContext, self.dataController12.container.viewContext)
                     )
                 }
+                Section("코드 모음") {
+                    Group{
+                        NavigationLink("AnimationAsync", destination: AnimationAsync())
+                        NavigationLink("ViewContainers", destination: ViewContainers())
+                        NavigationLink("UserInterfaceElements", destination: UserInterfaceElements())
+                        NavigationLink("Shapes", destination: Shapes())
+                        NavigationLink("Test View", destination: TestView())
+                        NavigationLink("OCR", destination: OCR())
+                        NavigationLink("PopToRoot", destination: RootView())
+                        NavigationLink("Closures", destination: Closures())
+                    }
+                    Group{
+                        if let uiImage = UIImage(data: self.imageData) {
+                            Image(uiImage: uiImage)
+                        }
+                        Text(self.metaData)
+                        NavigationLink("ShareAnything", destination: ShareAnything())
+                        NavigationLink("Memoji", destination: Memoji())
+                        Button("Dictionary") {
+                            self.showDictionary.toggle()
+                        }
+                    }
+                    
+                }
+                
             }
             .navigationTitle("SwiftUI Study App")
             .navigationBarTitleDisplayMode(.large)
         }
+        .sheet(isPresented: self.$showDictionary) {
+            NavigationView {
+                DictionaryView()
+            }
+        }
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView(urlString: "")
+//    }
+//}

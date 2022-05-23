@@ -13,7 +13,7 @@ struct Day16: View {
     @State private var stateString: String = ""
     @State private var colorString: String = "Empty"
     
-    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green"]
+    let arrayColor: [String] = ["Red", "Blue", "Yellow", "Black", "White", "Gray", "Green", "Red", "Blue", "Yellow", "Black"]
     
     var body: some View {
         // Form = TableView 맞는듯
@@ -29,6 +29,7 @@ struct Day16: View {
                     Text(color)
                 }
             }
+            
             Group {
                 // Text = UILabel
                 Text("Group, world #1").padding()
@@ -43,7 +44,7 @@ struct Day16: View {
             }
             Section {
                 Group {
-                    Text("Group in Section")
+                    Text("HStack")
                 }
                 ForEach(4..<7) { index in // 인자 하나 받음
                     Text("Group, world #\(index)")
@@ -51,7 +52,10 @@ struct Day16: View {
                 Section {
                     Text("Section in Section with padding").padding()
                 }
+            } header: {
+                Text("Stack")
             }
+            
             Group {
                 Group {
                     Text("Group in Group #1").padding()
@@ -69,7 +73,7 @@ struct Day16: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Day16_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Day16()
