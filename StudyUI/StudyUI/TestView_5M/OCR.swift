@@ -221,7 +221,7 @@ class CameraViewModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate
     func requestToNCP() {
         let secretKey = "WllrWkNqZFRiZ2tQTVdQWHNLdHVOQ0lER0lZUHFiSXM="
         let invokeURL = "https://4ccdf4cd91d74b5da9cdd9c5f5321e41.apigw.ntruss.com/custom/v1/15525/bb5a0ba92c3044b7fb70de99e31eaced068228c53202d801ce4050836a6244d6/general"
-        let ocrInvokeURL = "http://clovaocr-api-kr.ncloud.com/external/v1/15525/bb5a0ba92c3044b7fb70de99e31eaced068228c53202d801ce4050836a6244d6"
+        let _ = "http://clovaocr-api-kr.ncloud.com/external/v1/15525/bb5a0ba92c3044b7fb70de99e31eaced068228c53202d801ce4050836a6244d6"
         guard let imageData = UIImage(data: self.picData)?.pngData() else {
             print("imageData Fail")
             return

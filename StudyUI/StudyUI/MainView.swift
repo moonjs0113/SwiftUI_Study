@@ -22,11 +22,8 @@ struct MainView: View {
         NavigationView{
             Form {
                 Section("실험실") {
-                    
-                    NavigationLink("ViewDrawing", destination: WrappedViewDrawing())
-                    
-                    NavigationLink("ScrollPinView", destination: ScrollPinView())
-                    NavigationLink("Method Swizzling", destination: MethodSwizzling())
+                    NavigationLink("ViewLifeCycle", destination: LifeCycle())
+                    NavigationLink("AVPlayer", destination: AVPlayer())
                 }
                 Section {
                     ForEach(self.text, id:\.self) { title in
@@ -69,14 +66,24 @@ struct MainView: View {
                 }
                 Section("코드 모음") {
                     Group{
-                        NavigationLink("AnimationAsync", destination: AnimationAsync())
-                        NavigationLink("ViewContainers", destination: ViewContainers())
-                        NavigationLink("UserInterfaceElements", destination: UserInterfaceElements())
-                        NavigationLink("Shapes", destination: Shapes())
-                        NavigationLink("Test View", destination: TestView())
-                        NavigationLink("OCR", destination: OCR())
-                        NavigationLink("PopToRoot", destination: RootView())
-                        NavigationLink("Closures", destination: Closures())
+                        Group {
+                            NavigationLink("AnimationAsync", destination: AnimationAsync())
+                            NavigationLink("ViewContainers", destination: ViewContainers())
+                            NavigationLink("UserInterfaceElements", destination: UserInterfaceElements())
+                            NavigationLink("Shapes", destination: Shapes())
+                            NavigationLink("Test View", destination: TestView())
+                        }
+                        Group {
+                            NavigationLink("OCR", destination: OCR())
+                            NavigationLink("PopToRoot", destination: RootView())
+                            NavigationLink("Closures", destination: Closures())
+                            NavigationLink("ViewDrawing", destination: WrappedViewDrawing())
+                            NavigationLink("ScrollPinView", destination: ScrollPinView())
+                        }
+                        Group {
+                            NavigationLink("Method Swizzling", destination: MethodSwizzling())
+                            NavigationLink("Memory", destination: ARCView())
+                        }
                     }
                     Group{
                         if let uiImage = UIImage(data: self.imageData) {

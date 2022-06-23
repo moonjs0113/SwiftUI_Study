@@ -21,10 +21,11 @@ class PopToRoot: ObservableObject {
 
 struct RootView: View {
     @StateObject var ePopToRoot: PopToRoot = PopToRoot(popToRootBool: false)
+    // or @ObservedObject
     
     var body: some View {
-        NavigationView{
-            NavigationLink("NavigationPop", isActive: self.$ePopToRoot.popToRootBool) {
+        NavigationView {
+            NavigationLink("NavigationPop to Next View1", isActive: self.$ePopToRoot.popToRootBool) {
                 NavigationPopToRoot()
             }
         }
@@ -34,13 +35,13 @@ struct RootView: View {
 
 struct NavigationPopToRoot: View {
     var body: some View {
-        NavigationLink("Next View", destination: NavigationPopToRoot1())
+        NavigationLink("Next View2", destination: NavigationPopToRoot1())
     }
 }
 
 struct NavigationPopToRoot1: View {
     var body: some View {
-        NavigationLink("Next View", destination: NavigationPopToRoot2())
+        NavigationLink("Next View3", destination: NavigationPopToRoot2())
     }
 }
 
@@ -53,6 +54,13 @@ struct NavigationPopToRoot2: View {
         } label: {
             Text("Go To Root")
         }
+        NavigationLink("Next View", destination: NavigationPopToRoot3())
+    }
+}
+
+struct NavigationPopToRoot3: View {
+    var body: some View {
+        Text("in NavigationPopToRoot3")
     }
 }
 
