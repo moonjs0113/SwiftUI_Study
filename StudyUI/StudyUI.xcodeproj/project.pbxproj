@@ -51,6 +51,13 @@
 		C771265327E0DFD1000CA0B3 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265127E0DFD1000CA0B3 /* missions.json */; };
 		C771265427E0DFD1000CA0B3 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = C771265227E0DFD1000CA0B3 /* astronauts.json */; };
 		C77459A42816D9AD00B31421 /* ShareAnything.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77459A32816D9AD00B31421 /* ShareAnything.swift */; };
+		C77A0A90286D6071006747F3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A89286D6071006747F3 /* NetworkError.swift */; };
+		C77A0A91286D6071006747F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8A286D6071006747F3 /* ContentView.swift */; };
+		C77A0A92286D6071006747F3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8B286D6071006747F3 /* SwiftUIView.swift */; };
+		C77A0A93286D6071006747F3 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8C286D6071006747F3 /* Step.swift */; };
+		C77A0A94286D6071006747F3 /* UIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8D286D6071006747F3 /* UIKitView.swift */; };
+		C77A0A95286D6071006747F3 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8E286D6071006747F3 /* NetworkView.swift */; };
+		C77A0A96286D6071006747F3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A0A8F286D6071006747F3 /* NetworkManager.swift */; };
 		C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */; };
 		C77A8D5D27CFA81B00C59679 /* Day27.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A8D5C27CFA81B00C59679 /* Day27.swift */; };
 		C77F3E1027C27107002681B9 /* countries.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77F3E0F27C27107002681B9 /* countries.xcassets */; };
@@ -131,6 +138,13 @@
 		C771265227E0DFD1000CA0B3 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		C77459A32816D9AD00B31421 /* ShareAnything.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAnything.swift; sourceTree = "<group>"; };
 		C77459A52816DC7400B31421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C77A0A89286D6071006747F3 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C77A0A8A286D6071006747F3 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C77A0A8B286D6071006747F3 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		C77A0A8C286D6071006747F3 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		C77A0A8D286D6071006747F3 /* UIKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitView.swift; sourceTree = "<group>"; };
+		C77A0A8E286D6071006747F3 /* NetworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		C77A0A8F286D6071006747F3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C77A8D5A27CFA51A00C59679 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = ../../../CreateML/SleepCalculator.mlmodel; sourceTree = "<group>"; };
 		C77A8D5C27CFA81B00C59679 /* Day27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day27.swift; sourceTree = "<group>"; };
 		C77F3E0F27C27107002681B9 /* countries.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = countries.xcassets; sourceTree = "<group>"; };
@@ -250,6 +264,20 @@
 			path = CoreDataPrjc12;
 			sourceTree = "<group>";
 		};
+		C77A0A97286D6075006747F3 /* ConcurrencyAndUI */ = {
+			isa = PBXGroup;
+			children = (
+				C77A0A8A286D6071006747F3 /* ContentView.swift */,
+				C77A0A89286D6071006747F3 /* NetworkError.swift */,
+				C77A0A8F286D6071006747F3 /* NetworkManager.swift */,
+				C77A0A8E286D6071006747F3 /* NetworkView.swift */,
+				C77A0A8C286D6071006747F3 /* Step.swift */,
+				C77A0A8B286D6071006747F3 /* SwiftUIView.swift */,
+				C77A0A8D286D6071006747F3 /* UIKitView.swift */,
+			);
+			path = ConcurrencyAndUI;
+			sourceTree = "<group>";
+		};
 		C7923D5628128D8D00B2B30C /* TestView_5M */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +372,7 @@
 			children = (
 				C7E16D0E285DC05A00A211C1 /* LifeCycle.swift */,
 				C7E16D10285E0ACB00A211C1 /* AVPlayer.swift */,
+				C77A0A97286D6075006747F3 /* ConcurrencyAndUI */,
 				C7E16D12285E0BCE00A211C1 /* css_test.mp3 */,
 				C7DD4158284788E4006DC070 /* ARCView.swift */,
 			);
@@ -457,6 +486,7 @@
 				C70C132C281501DD00CFEE5A /* UserInterfaceElements.swift in Sources */,
 				C75FE8C327F7466D00E9E44A /* Country+CoreDataProperties.swift in Sources */,
 				C7E45F2327DF8D7700148DA7 /* Day39_3.swift in Sources */,
+				C77A0A94286D6071006747F3 /* UIKitView.swift in Sources */,
 				C7E45F1C27DF87C500148DA7 /* Day39.swift in Sources */,
 				C75FE8BD27F7466D00E9E44A /* Movie+CoreDataProperties.swift in Sources */,
 				C7420D2427C3C34A00F8959E /* Day23.swift in Sources */,
@@ -473,6 +503,7 @@
 				C758762227EB21A600D6EE87 /* Day50.swift in Sources */,
 				C7E9EBAD27D4B1C800E80F8D /* Day33.swift in Sources */,
 				C7068E4228166E8F004A994F /* OCR.swift in Sources */,
+				C77A0A95286D6071006747F3 /* NetworkView.swift in Sources */,
 				C7D077DB281BFB84008AFECA /* Category.swift in Sources */,
 				C75FE8C027F7466D00E9E44A /* Singer+CoreDataProperties.swift in Sources */,
 				C7B6777428362E5B007D2EC7 /* ViewDrawing.swift in Sources */,
@@ -500,12 +531,16 @@
 				C7A213DC27E3871F000BC5C4 /* Day45.swift in Sources */,
 				C7037ECA27E220650003124A /* Day41.swift in Sources */,
 				C75FE8BE27F7466D00E9E44A /* Country+CoreDataClass.swift in Sources */,
+				C77A0A90286D6071006747F3 /* NetworkError.swift in Sources */,
 				C72D9EAA27C0F15F00519438 /* MainView.swift in Sources */,
 				C7D077D9281BF749008AFECA /* DictionaryView.swift in Sources */,
 				C7FC0ED7282966B000CF60B8 /* Closures.swift in Sources */,
+				C77A0A93286D6071006747F3 /* Step.swift in Sources */,
+				C77A0A96286D6071006747F3 /* NetworkManager.swift in Sources */,
 				C75FE8D127F7534100E9E44A /* Day57.swift in Sources */,
 				C7037ECC27E2263D0003124A /* AstronautView.swift in Sources */,
 				C77A8D5B27CFA51A00C59679 /* SleepCalculator.mlmodel in Sources */,
+				C77A0A91286D6071006747F3 /* ContentView.swift in Sources */,
 				C75C2DB2280D6D8D006514EE /* TestView.swift in Sources */,
 				C7E16D0F285DC05A00A211C1 /* LifeCycle.swift in Sources */,
 				C75FE8D027F7534100E9E44A /* DataController.swift in Sources */,
@@ -513,6 +548,7 @@
 				C7956B0C27BF902A005A5DB7 /* Day16_2.swift in Sources */,
 				C728929228157CC8004AEFE7 /* Shapes.swift in Sources */,
 				C7DD4159284788E4006DC070 /* ARCView.swift in Sources */,
+				C77A0A92286D6071006747F3 /* SwiftUIView.swift in Sources */,
 				C73D2871282AC24600B6DB7E /* MethodSwizzling.swift in Sources */,
 				C73B126F27C605C300C77968 /* Consolidation2.swift in Sources */,
 			);

@@ -38,8 +38,18 @@ struct LifeCycle: View {
             }
             
             VStack {
-                Button("Button Hidden Text Change") {
+                Button {
                     hiddenText = "Button Hidden Touch!"
+                } label: {
+                    Button {
+                        hiddenText = "Button Hidden Touch!"
+                    } label: {
+                        Button {
+                            hiddenText = "Button Hidden Touch!"
+                        } label: {
+                         Text("asdf")
+                        }
+                    }
                 }
                 Divider()
             }
