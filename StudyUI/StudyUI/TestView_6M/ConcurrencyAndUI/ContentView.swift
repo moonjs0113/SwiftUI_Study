@@ -26,8 +26,8 @@ struct ConcurrencyView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ConcurrencyView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ConcurrencyView()
     }
 }
