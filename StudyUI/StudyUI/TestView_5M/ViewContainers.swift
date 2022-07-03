@@ -175,6 +175,25 @@ struct ViewContainerTab3: View {
         }
     }
     
+    func group() -> some View{
+        Group {
+            if self.isAnyView {
+                Day20()
+            } else {
+                TestView()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func useViewBuilder(whatView: Bool) -> some View {
+        if whatView {
+            Day43()
+        } else {
+            TestView()
+        }
+    }
+    
     @ViewBuilder
     func showViewBuilder() -> some View{
         if self.isViewBuilder {
@@ -182,6 +201,10 @@ struct ViewContainerTab3: View {
         } else {
             TestView()
         }
+    }
+    
+    func viewBuilderParameter<V: View>(@ViewBuilder view: (String) -> V) {
+        
     }
     
     var body: some View {
@@ -226,3 +249,6 @@ struct TestView2_Previews: PreviewProvider {
         ViewContainers()
     }
 }
+
+
+
