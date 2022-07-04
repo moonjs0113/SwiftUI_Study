@@ -15,13 +15,13 @@ class PopToRoot: ObservableObject {
     }
     
     deinit {
-        print("PopToRoot",#function)
+        print("PopToRoot", #function)
     }
 }
 
 struct RootView: View {
-    @StateObject var ePopToRoot: PopToRoot = PopToRoot(popToRootBool: false)
-    // or @ObservedObject
+    @ObservedObject var ePopToRoot: PopToRoot = PopToRoot(popToRootBool: false)
+    // or @StateObject
     
     var body: some View {
         NavigationView {

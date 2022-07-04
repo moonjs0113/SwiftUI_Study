@@ -25,6 +25,7 @@ struct MainView: View {
                     NavigationLink("ViewLifeCycle", destination: LifeCycle())
                     NavigationLink("AVPlayer", destination: AVPlayer())
                     NavigationLink("Concurrency", destination: ConcurrencyView())
+                    NavigationLink("아무개", destination: GhostView())//아무개_View())
                 }
                 Section {
                     ForEach(self.text, id:\.self) { title in

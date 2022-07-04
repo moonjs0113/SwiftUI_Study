@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HelloWeatherUIApp: App {
+    let service = WeatherService()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.dark)
+                .environmentObject(service)
         }
     }
 }

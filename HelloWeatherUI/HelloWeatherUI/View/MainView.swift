@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var service: WeatherService
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            BackgroundView()
+            if service.updating {
+                ProgressView()
+            } else if let _ = service.lastError {
+                ErrorView()
+            } else {
+                WeatherContentView()
+            }
+        }
+        .animation(.easeIn, value: service.updating)
+        .onAppear {
+            self.service.fetch()
+        }
     }
 }
 
