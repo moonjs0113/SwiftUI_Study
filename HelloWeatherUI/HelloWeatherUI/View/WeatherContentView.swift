@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeatherContentView: View {
+    
     @EnvironmentObject var service: WeatherService
     
     var body: some View {
@@ -22,7 +23,7 @@ struct WeatherContentView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         Color.clear
-                        CurrentWeatherView(model: service.currentWeather)
+                        CurrentWeatherView(model: self.service.currentWeather)
                     }
                     .frame(height: reader.size.height)
                     
