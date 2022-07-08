@@ -29,6 +29,7 @@
 		C72D9EAC27C0F2E200519438 /* Day20.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D9EAB27C0F2E200519438 /* Day20.swift */; };
 		C73A4D7D27CBBC2A00B2769E /* Day26.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A4D7C27CBBC2A00B2769E /* Day26.swift */; };
 		C73B126F27C605C300C77968 /* Consolidation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B126E27C605C300C77968 /* Consolidation2.swift */; };
+		C73BC37A287583B200DC2D12 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BC379287583B200DC2D12 /* TextEditorView.swift */; };
 		C73D2871282AC24600B6DB7E /* MethodSwizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73D2870282AC24600B6DB7E /* MethodSwizzling.swift */; };
 		C73F60B727D73B5A00DC57DD /* Day37.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F60B627D73B5A00DC57DD /* Day37.swift */; };
 		C73FF2C728732A5800C44EC9 /* dkanroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73FF2C628732A5800C44EC9 /* dkanroView.swift */; };
@@ -117,6 +118,7 @@
 		C72D9EAB27C0F2E200519438 /* Day20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day20.swift; sourceTree = "<group>"; };
 		C73A4D7C27CBBC2A00B2769E /* Day26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day26.swift; sourceTree = "<group>"; };
 		C73B126E27C605C300C77968 /* Consolidation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consolidation2.swift; sourceTree = "<group>"; };
+		C73BC379287583B200DC2D12 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
 		C73D2870282AC24600B6DB7E /* MethodSwizzling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzling.swift; sourceTree = "<group>"; };
 		C73F60B627D73B5A00DC57DD /* Day37.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day37.swift; sourceTree = "<group>"; };
 		C73FF2C628732A5800C44EC9 /* dkanroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dkanroView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C73FF2C628732A5800C44EC9 /* dkanroView.swift */,
+				C73BC379287583B200DC2D12 /* TextEditorView.swift */,
 			);
 			path = TestView_7M;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				C7E9EBAD27D4B1C800E80F8D /* Day33.swift in Sources */,
 				C7068E4228166E8F004A994F /* OCR.swift in Sources */,
 				C77A0A95286D6071006747F3 /* NetworkView.swift in Sources */,
+				C73BC37A287583B200DC2D12 /* TextEditorView.swift in Sources */,
 				C7D077DB281BFB84008AFECA /* Category.swift in Sources */,
 				C75FE8C027F7466D00E9E44A /* Singer+CoreDataProperties.swift in Sources */,
 				C7B6777428362E5B007D2EC7 /* ViewDrawing.swift in Sources */,
