@@ -12,6 +12,8 @@ struct WeatherEntryView: View {
 
     var body: some View {
         ZStack {
+            
+//            LottieView(fileName: "flatfish.json", animationSpeed: 1)
             LinearGradient(colors: [
                 Color(red: 4/255, green: 7/255, blue: 24/255),
                 Color(red: 39/255, green: 54/255, blue: 80/255)

@@ -27,6 +27,7 @@ struct MainView: View {
                     NavigationLink("Concurrency", destination: ConcurrencyView())
                     NavigationLink("아무개", destination: GhostView())//아무개_View())
                     NavigationLink("TextEditor", destination: TextEditorView())
+                    NavigationLink("TempCustomNavigationView", destination: TempCustomNavigationView())
                 }
                 Section {
                     ForEach(self.text, id:\.self) { title in

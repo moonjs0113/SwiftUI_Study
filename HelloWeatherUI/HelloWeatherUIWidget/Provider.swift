@@ -29,7 +29,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WeatherEntry>) -> ()) {
-        var entries: [WeatherEntry] = WidgetData.read().map {
+        let entries: [WeatherEntry] = WidgetData.read().map {
             WeatherEntry(widgetData: $0)
         }
         

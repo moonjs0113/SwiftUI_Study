@@ -117,6 +117,9 @@ struct ControlsAndIndicators: View {
                     }
                 }
                 .pickerStyle(.wheel)
+                .frame(height: 50)
+                .clipped()
+//                .scaleEffect(CGSize(width: 1, height: 1.5))
 
                 Picker("Segmented Picker", selection: self.$pickerValue) {
                     ForEach(0..<5) { per in
