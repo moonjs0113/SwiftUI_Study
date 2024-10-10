@@ -25,3 +25,15 @@ struct Listing: Identifiable, Codable {
     let title: String
     var rating: Double
 }
+
+extension Listing {
+    static let mockData: [Self] = {
+        guard let fileURL = Bundle.main.url(forResource: "Listing_Mock", withExtension: "json") else {
+            return []
+        }
+        guard let data = try? Data(contentsOf: fileURL) else {
+            return []
+        }
+        return (try? JSONDecoder().decode([Listing].self, from: data)) ?? []
+    }()
+}

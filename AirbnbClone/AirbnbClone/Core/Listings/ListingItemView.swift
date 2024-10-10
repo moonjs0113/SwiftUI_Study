@@ -16,6 +16,7 @@ struct ListingItemView: View {
 //        "listing-3",
 //        "listing-4",
 //    ]
+    var listing: Listing = Listing.mockData.randomElement()!
     
     var body: some View {
         VStack(spacing: 8) {
