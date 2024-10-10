@@ -14,6 +14,7 @@
 		C7184FF92CB683A000C6D12A /* AirbnbCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7184FF82CB683A000C6D12A /* AirbnbCloneTests.swift */; };
 		C71850032CB683A000C6D12A /* AirbnbCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71850022CB683A000C6D12A /* AirbnbCloneUITests.swift */; };
 		C71850052CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71850042CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift */; };
+		C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762BD42CB7DFE200436780 /* ExploreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C7184FFE2CB683A000C6D12A /* AirbnbCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71850022CB683A000C6D12A /* AirbnbCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbCloneUITests.swift; sourceTree = "<group>"; };
 		C71850042CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C7762BD42CB7DFE200436780 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,11 @@
 		C7184FE62CB6839F00C6D12A /* AirbnbClone */ = {
 			isa = PBXGroup;
 			children = (
-				C7184FE72CB6839F00C6D12A /* AirbnbCloneApp.swift */,
+				C71850112CB6844E00C6D12A /* App */,
+				C71850122CB6845200C6D12A /* Core */,
+				C71850152CB6846800C6D12A /* Utils */,
+				C71850142CB6845D00C6D12A /* Models */,
+				C71850132CB6845800C6D12A /* Extensions */,
 				C7184FE92CB6839F00C6D12A /* ContentView.swift */,
 				C7184FEB2CB683A000C6D12A /* Assets.xcassets */,
 				C7184FED2CB683A000C6D12A /* Preview Content */,
@@ -125,6 +131,99 @@
 				C71850042CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift */,
 			);
 			path = AirbnbCloneUITests;
+			sourceTree = "<group>";
+		};
+		C71850112CB6844E00C6D12A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C7184FE72CB6839F00C6D12A /* AirbnbCloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C71850122CB6845200C6D12A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C718501C2CB684CF00C6D12A /* Wishlists */,
+				C718501B2CB684C400C6D12A /* TabBar */,
+				C718501A2CB684C100C6D12A /* Root */,
+				C71850162CB6848D00C6D12A /* MapView */,
+				C71850172CB6849800C6D12A /* Listings */,
+				C71850182CB684A200C6D12A /* Explore */,
+				C71850192CB684B100C6D12A /* Profile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C71850132CB6845800C6D12A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C71850142CB6845D00C6D12A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C71850152CB6846800C6D12A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C71850162CB6848D00C6D12A /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		C71850172CB6849800C6D12A /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Listings;
+			sourceTree = "<group>";
+		};
+		C71850182CB684A200C6D12A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				C7762BD42CB7DFE200436780 /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		C71850192CB684B100C6D12A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C718501A2CB684C100C6D12A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		C718501B2CB684C400C6D12A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C718501C2CB684CF00C6D12A /* Wishlists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wishlists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7184FEA2CB6839F00C6D12A /* ContentView.swift in Sources */,
+				C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */,
 				C7184FE82CB6839F00C6D12A /* AirbnbCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
