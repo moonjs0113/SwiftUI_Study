@@ -13,7 +13,7 @@ struct ExploreView: View {
             ScrollView {
                 LazyVStack(spacing: 30) {
                     ForEach(0...10, id: \.self) { item in
-                        Rectangle()
+                        ListingItemView()
                             .frame(height: 400)
                             .clipShape(
                                 RoundedRectangle(cornerRadius: 10)

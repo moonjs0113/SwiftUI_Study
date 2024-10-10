@@ -15,6 +15,7 @@
 		C71850032CB683A000C6D12A /* AirbnbCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71850022CB683A000C6D12A /* AirbnbCloneUITests.swift */; };
 		C71850052CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71850042CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift */; };
 		C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762BD42CB7DFE200436780 /* ExploreView.swift */; };
+		C7762BD72CB7E09A00436780 /* ListingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762BD62CB7E09A00436780 /* ListingItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		C71850022CB683A000C6D12A /* AirbnbCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbCloneUITests.swift; sourceTree = "<group>"; };
 		C71850042CB683A000C6D12A /* AirbnbCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7762BD42CB7DFE200436780 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		C7762BD62CB7E09A00436780 /* ListingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		C71850172CB6849800C6D12A /* Listings */ = {
 			isa = PBXGroup;
 			children = (
+				C7762BD62CB7E09A00436780 /* ListingItemView.swift */,
 			);
 			path = Listings;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7184FEA2CB6839F00C6D12A /* ContentView.swift in Sources */,
+				C7762BD72CB7E09A00436780 /* ListingItemView.swift in Sources */,
 				C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */,
 				C7184FE82CB6839F00C6D12A /* AirbnbCloneApp.swift in Sources */,
 			);
