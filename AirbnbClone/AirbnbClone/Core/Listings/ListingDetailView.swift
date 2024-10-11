@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ListingDetailView: View {
-
+    let listing: Listing
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -32,20 +32,20 @@ struct ListingDetailView: View {
                 }
             }
             VStack(alignment: .leading, spacing: 8) {
-                Text("Miami Villa")
+                Text(listing.title)
                     .font(.title)
                     .fontWeight(.semibold)
                 VStack(alignment: .leading) {
                     HStack(spacing: 2) {
                         Image(systemName: "star.fill")
-                        Text("4.86")
+                        Text(String(format: "%.2f", listing.rating))
                         Text(" - ")
-                        Text("28 reviews")
+                        Text("\((1...99).randomElement()!) reviews")
                             .underline()
                             .fontWeight(.semibold)
                     }
                     .foregroundStyle(.black)
-                    Text("Miami, Florida")
+                    Text("\(listing.city), \(listing.state)")
                 }
                 .font(.caption)
             }
@@ -60,10 +60,10 @@ struct ListingDetailView: View {
                         .font(.headline)
                         .frame(width: 250, alignment: .leading)
                     HStack(spacing: 2) {
-                        Text("4 guests - ")
-                        Text("4 bedrooms - ")
-                        Text("4 beds - ")
-                        Text("3 baths")
+                        Text("\(listing.numberOfGuests) guests - ")
+                        Text("\(listing.numberOfBedrooms) bedrooms - ")
+                        Text("\(listing.numberOfBeds) beds - ")
+                        Text("\(listing.numberOfBathrooms) baths")
                     }
                     .font(.caption)
                 }
@@ -84,14 +84,14 @@ struct ListingDetailView: View {
             Divider()
             
             VStack(alignment: .leading, spacing: 16) {
-                ForEach(0..<2) { feature in
+                ForEach(listing.features) { feature in
                     HStack(spacing: 12) {
-                        Image(systemName: "medal")
+                        Image(systemName: feature.imageName)
                         VStack(alignment: .leading) {
-                            Text("Superhost")
+                            Text(feature.title)
                                 .font(.footnote)
                                 .fontWeight(.semibold)
-                            Text("Superhosts area experience, highly rated hosts who are commited to providing great stars for guests")
+                            Text(feature.subtitle)
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }
@@ -108,7 +108,7 @@ struct ListingDetailView: View {
                     .font(.headline)
                 ScrollView(.horizontal) {
                     HStack(spacing: 16) {
-                        ForEach(1..<5) { bedroom in
+                        ForEach(0..<listing.numberOfBedrooms) { bedroom in
                             VStack(alignment: .leading) {
                                 Image(systemName: "bed.double")
                                 Text("Bedrrom \(bedroom)")
@@ -133,11 +133,11 @@ struct ListingDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text("What this place offers")
                     .font(.headline)
-                ForEach(0..<5) { feature in
+                ForEach(listing.amenities) { amenity in
                     HStack {
-                        Image(systemName: "wifi")
+                        Image(systemName: amenity.imageName)
                             .frame(width: 32)
-                        Text("Wifi")
+                        Text(amenity.title)
                             .font(.footnote)
                         Spacer()
                     }
@@ -167,7 +167,7 @@ struct ListingDetailView: View {
                     .padding(.bottom)
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("$500")
+                        Text("$\(listing.pricePerNight)")
                             .font(.headline)
                             .fontWeight(.semibold)
                         Text("Total before taxes")
@@ -200,5 +200,5 @@ struct ListingDetailView: View {
 }
 
 #Preview {
-    ListingDetailView()
+    ListingDetailView(listing: Listing.mockData.randomElement()!)
 }

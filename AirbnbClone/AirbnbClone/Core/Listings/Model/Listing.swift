@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Listing: Identifiable, Codable {
+struct Listing: Identifiable, Codable, Hashable {
     let id: String
     let ownerUid: String
     let ownerName: String
@@ -21,7 +21,7 @@ struct Listing: Identifiable, Codable {
     let longitude: Double
     let address: String
     let city: String
-    let stat: String
+    let state: String
     let title: String
     var rating: Double
     
@@ -33,14 +33,11 @@ struct Listing: Identifiable, Codable {
 extension Listing {
     static let mockData: [Self] = {
         guard let fileURL = Bundle.main.url(forResource: "Listing_Mock", withExtension: "json") else {
-            print("fileURL")
             return []
         }
         guard let data = try? Data(contentsOf: fileURL) else {
-            print("data")
             return []
         }
-        print("Print")
         return (try? JSONDecoder().decode([Listing].self, from: data)) ?? []
     }()
 }
