@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct DestinationSearchView: View {
+    // Properties
     @Binding var isShowView: Bool
     @State private var destination = ""
     @State private var selectedOption: DestinationSearchOptions = .location
@@ -17,6 +18,7 @@ struct DestinationSearchView: View {
     @State private var endDate = Date()
     @State private var numGuests = 1
     
+    // Body
     var locationBody: some View {
         Group {
             Text("Where to?")
@@ -66,7 +68,6 @@ struct DestinationSearchView: View {
             }
         }
     }
-    
     var optionBody: some View {
         Group {
             switch selectedOption {
@@ -101,59 +102,28 @@ struct DestinationSearchView: View {
             }
             .padding()
             
-            VStack(alignment: .leading) {
-                if selectedOption == .location {
-                    locationBody
-                } else {
-                    CollapsedPickerView(
-                        title: "Where",
-                        description: "Add destination"
-                    )
+            ForEach(
+                DestinationSearchOptions.allCases,
+                id: \.self
+            ) { option in
+                VStack(alignment: .leading) {
+                    if selectedOption == option {
+                        optionBody
+                    } else {
+                        CollapsedPickerView(
+                            title: option.title,
+                            description: option.decription
+                        )
+                    }
                 }
-            }
-            .modifier(
-                CollapsibleDestinationViewModifier(
-                    selectedOption: $selectedOption,
-                    option: .location,
-                    height: 120
-                )
-            )
-            
-            VStack(alignment: .leading) {
-                if selectedOption == .dates {
-                    datesBody
-                } else {
-                    CollapsedPickerView(
-                        title: "When",
-                        description: "Add dates"
+                .modifier(
+                    CollapsibleDestinationViewModifier(
+                        selectedOption: $selectedOption,
+                        option: option,
+                        height: option.height
                     )
-                }
-            }
-            .modifier(
-                CollapsibleDestinationViewModifier(
-                    selectedOption: $selectedOption,
-                    option: .dates,
-                    height: 180
                 )
-            )
-            
-            VStack(alignment: .leading) {
-                if selectedOption == .guests {
-                    guestsBody
-                } else {
-                    CollapsedPickerView(
-                        title: "Who",
-                        description: "Add guests"
-                    )
-                }
             }
-            .modifier(
-                CollapsibleDestinationViewModifier(
-                    selectedOption: $selectedOption,
-                    option: .guests,
-                    height: 120
-                )
-            )
             
             Spacer()
         }
