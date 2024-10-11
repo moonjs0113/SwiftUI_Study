@@ -21,6 +21,10 @@
 		C7762C242CB7F1D500436780 /* SearchAndFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762C232CB7F1D500436780 /* SearchAndFilterBar.swift */; };
 		C7762C262CB808C900436780 /* ListingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762C252CB808C900436780 /* ListingDetailView.swift */; };
 		C7762C292CB80ACC00436780 /* ListingImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7762C282CB80ACC00436780 /* ListingImageCarouselView.swift */; };
+		C7B8AC542CB959B60089E8C4 /* DestinationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC532CB959B60089E8C4 /* DestinationSearchView.swift */; };
+		C7B8AC562CB95D350089E8C4 /* DestinationSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC552CB95D350089E8C4 /* DestinationSearchOptions.swift */; };
+		C7B8AC582CB966D00089E8C4 /* CollapsedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC572CB966D00089E8C4 /* CollapsedPickerView.swift */; };
+		C7B8AC5A2CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC592CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		C7762C232CB7F1D500436780 /* SearchAndFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFilterBar.swift; sourceTree = "<group>"; };
 		C7762C252CB808C900436780 /* ListingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailView.swift; sourceTree = "<group>"; };
 		C7762C282CB80ACC00436780 /* ListingImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageCarouselView.swift; sourceTree = "<group>"; };
+		C7B8AC532CB959B60089E8C4 /* DestinationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchView.swift; sourceTree = "<group>"; };
+		C7B8AC552CB95D350089E8C4 /* DestinationSearchOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchOptions.swift; sourceTree = "<group>"; };
+		C7B8AC572CB966D00089E8C4 /* CollapsedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedPickerView.swift; sourceTree = "<group>"; };
+		C7B8AC592CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleDestinationViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				C7762BD42CB7DFE200436780 /* ExploreView.swift */,
+				C7B8AC532CB959B60089E8C4 /* DestinationSearchView.swift */,
+				C7B8AC552CB95D350089E8C4 /* DestinationSearchOptions.swift */,
+				C7B8AC592CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift */,
 				C7762C232CB7F1D500436780 /* SearchAndFilterBar.swift */,
 			);
 			path = Explore;
@@ -264,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				C7762C282CB80ACC00436780 /* ListingImageCarouselView.swift */,
+				C7B8AC572CB966D00089E8C4 /* CollapsedPickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -404,6 +416,10 @@
 				C7762BD72CB7E09A00436780 /* ListingItemView.swift in Sources */,
 				C7762C1D2CB7ECC600436780 /* Listing.swift in Sources */,
 				C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */,
+				C7B8AC5A2CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift in Sources */,
+				C7B8AC582CB966D00089E8C4 /* CollapsedPickerView.swift in Sources */,
+				C7B8AC562CB95D350089E8C4 /* DestinationSearchOptions.swift in Sources */,
+				C7B8AC542CB959B60089E8C4 /* DestinationSearchView.swift in Sources */,
 				C7184FE82CB6839F00C6D12A /* AirbnbCloneApp.swift in Sources */,
 				C7762C242CB7F1D500436780 /* SearchAndFilterBar.swift in Sources */,
 				C7762C292CB80ACC00436780 /* ListingImageCarouselView.swift in Sources */,
