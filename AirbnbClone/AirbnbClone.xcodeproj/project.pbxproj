@@ -25,6 +25,10 @@
 		C7B8AC562CB95D350089E8C4 /* DestinationSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC552CB95D350089E8C4 /* DestinationSearchOptions.swift */; };
 		C7B8AC582CB966D00089E8C4 /* CollapsedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC572CB966D00089E8C4 /* CollapsedPickerView.swift */; };
 		C7B8AC5A2CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC592CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift */; };
+		C7B8AC5C2CB969EF0089E8C4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC5B2CB969EF0089E8C4 /* ProfileView.swift */; };
+		C7B8AC5E2CB96AC20089E8C4 /* ProfileOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC5D2CB96AC20089E8C4 /* ProfileOptionRowView.swift */; };
+		C7B8AC602CB96B810089E8C4 /* WishlistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC5F2CB96B810089E8C4 /* WishlistsView.swift */; };
+		C7B8AC622CB96C660089E8C4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8AC612CB96C660089E8C4 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		C7B8AC552CB95D350089E8C4 /* DestinationSearchOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchOptions.swift; sourceTree = "<group>"; };
 		C7B8AC572CB966D00089E8C4 /* CollapsedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedPickerView.swift; sourceTree = "<group>"; };
 		C7B8AC592CB967110089E8C4 /* CollapsibleDestinationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleDestinationViewModifier.swift; sourceTree = "<group>"; };
+		C7B8AC5B2CB969EF0089E8C4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C7B8AC5D2CB96AC20089E8C4 /* ProfileOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionRowView.swift; sourceTree = "<group>"; };
+		C7B8AC5F2CB96B810089E8C4 /* WishlistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistsView.swift; sourceTree = "<group>"; };
+		C7B8AC612CB96C660089E8C4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +237,8 @@
 		C71850192CB684B100C6D12A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C7B8AC5B2CB969EF0089E8C4 /* ProfileView.swift */,
+				C7B8AC5D2CB96AC20089E8C4 /* ProfileOptionRowView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -243,6 +253,7 @@
 		C718501B2CB684C400C6D12A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				C7B8AC612CB96C660089E8C4 /* MainTabView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 		C718501C2CB684CF00C6D12A /* Wishlists */ = {
 			isa = PBXGroup;
 			children = (
+				C7B8AC5F2CB96B810089E8C4 /* WishlistsView.swift */,
 			);
 			path = Wishlists;
 			sourceTree = "<group>";
@@ -412,7 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7762C262CB808C900436780 /* ListingDetailView.swift in Sources */,
+				C7B8AC5C2CB969EF0089E8C4 /* ProfileView.swift in Sources */,
 				C7184FEA2CB6839F00C6D12A /* ContentView.swift in Sources */,
+				C7B8AC622CB96C660089E8C4 /* MainTabView.swift in Sources */,
 				C7762BD72CB7E09A00436780 /* ListingItemView.swift in Sources */,
 				C7762C1D2CB7ECC600436780 /* Listing.swift in Sources */,
 				C7762BD52CB7DFE200436780 /* ExploreView.swift in Sources */,
@@ -422,6 +436,8 @@
 				C7B8AC542CB959B60089E8C4 /* DestinationSearchView.swift in Sources */,
 				C7184FE82CB6839F00C6D12A /* AirbnbCloneApp.swift in Sources */,
 				C7762C242CB7F1D500436780 /* SearchAndFilterBar.swift in Sources */,
+				C7B8AC602CB96B810089E8C4 /* WishlistsView.swift in Sources */,
+				C7B8AC5E2CB96AC20089E8C4 /* ProfileOptionRowView.swift in Sources */,
 				C7762C292CB80ACC00436780 /* ListingImageCarouselView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
