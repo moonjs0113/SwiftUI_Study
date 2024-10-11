@@ -108,7 +108,7 @@ struct ListingDetailView: View {
                     .font(.headline)
                 ScrollView(.horizontal) {
                     HStack(spacing: 16) {
-                        ForEach(0..<listing.numberOfBedrooms) { bedroom in
+                        ForEach(1..<listing.numberOfBedrooms+1) { bedroom in
                             VStack(alignment: .leading) {
                                 Image(systemName: "bed.double")
                                 Text("Bedrrom \(bedroom)")
