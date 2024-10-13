@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ListingImageCarouselView: View {
-    let imageCount = 3
+    let imageURLs: [String]
     
     var body: some View {
         TabView {
-            ForEach(0...imageCount, id: \.self) { _ in
-                AsyncImage(url: .init(string: "https://picsum.photos/200")) { image in
+            ForEach(imageURLs, id: \.self) { urlString in
+                AsyncImage(url: .init(string: urlString)) { image in
                     image
                         .image?
                         .resizable()
@@ -26,5 +26,10 @@ struct ListingImageCarouselView: View {
 }
 
 #Preview {
-    ListingImageCarouselView()
+    ListingImageCarouselView(imageURLs: [
+        "https://picsum.photos/id/128/1024",
+        "https://picsum.photos/id/275/1024",
+        "https://picsum.photos/id/993/1024",
+        "https://picsum.photos/id/678/1024"
+    ])
 }

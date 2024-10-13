@@ -12,6 +12,7 @@ struct Listing: Identifiable, Codable, Hashable {
     let ownerUid: String
     let ownerName: String
     let ownerImageUrl: String
+    let imageURLs: [String]
     let numberOfBedrooms: Int
     let numberOfBathrooms: Int
     let numberOfGuests: Int

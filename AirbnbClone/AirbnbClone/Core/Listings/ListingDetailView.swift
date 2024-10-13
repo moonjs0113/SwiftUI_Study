@@ -31,7 +31,9 @@ struct ListingDetailView: View {
     var body: some View {
         ScrollView {
             ZStack(alignment: .topLeading) {
-                ListingImageCarouselView()
+                ListingImageCarouselView(
+                    imageURLs: listing.imageURLs
+                )
                     .frame(height: 320)
                 Button {
                     dismiss()
@@ -124,7 +126,10 @@ struct ListingDetailView: View {
                     .font(.headline)
                 ScrollView(.horizontal) {
                     HStack(spacing: 16) {
-                        ForEach(1..<listing.numberOfBedrooms+1) { bedroom in
+                        ForEach(
+                            1...listing.numberOfBedrooms,
+                            id: \.self
+                        ) { bedroom in
                             VStack(alignment: .leading) {
                                 Image(systemName: "bed.double")
                                 Text("Bedrrom \(bedroom)")
@@ -216,5 +221,7 @@ struct ListingDetailView: View {
 }
 
 #Preview {
-    ListingDetailView(listing: Listing.mockData.randomElement()!)
+    ListingDetailView(
+        listing: Listing.mockData.randomElement()!
+    )
 }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ExploreView: View {
     @State private var isShowDesinationSearchView = false
-    
-    let listing: [Listing] = Listing.mockData
+    @StateObject var viewModel = ExploreViewModel(service: ExploreService())
     
     var body: some View {
         NavigationStack {
@@ -27,7 +26,7 @@ struct ExploreView: View {
                             }
                         }
                     LazyVStack(spacing: 30) {
-                        ForEach(listing, id: \.self) { item in
+                        ForEach(viewModel.listings) { item in
                             NavigationLink(value: item) {
                                 ListingItemView(listing: item)
                                     .frame(height: 400)

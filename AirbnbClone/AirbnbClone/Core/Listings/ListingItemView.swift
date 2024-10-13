@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ListingItemView: View {
-    
     let listing: Listing
     
     var body: some View {
         VStack(spacing: 8) {
-            ListingImageCarouselView()
+            ListingImageCarouselView(
+                imageURLs: listing.imageURLs
+            )
             .frame(height: 320)
             .clipShape(
                 RoundedRectangle(cornerRadius: 10)
