@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Listing: Identifiable, Codable {
+struct Listing: Identifiable, Codable, Hashable {
     let id: String
     let ownerUid: String
     let ownerName: String
     let ownerImageUrl: String
+    let imageURLs: [String]
     let numberOfBedrooms: Int
     let numberOfBathrooms: Int
     let numberOfGuests: Int
@@ -21,9 +22,13 @@ struct Listing: Identifiable, Codable {
     let longitude: Double
     let address: String
     let city: String
-    let stat: String
+    let state: String
     let title: String
     var rating: Double
+    
+    var features: [ListingFeatures]
+    var amenities: [ListingAmenities]
+    let type: ListingType
 }
 
 extension Listing {
@@ -37,3 +42,9 @@ extension Listing {
         return (try? JSONDecoder().decode([Listing].self, from: data)) ?? []
     }()
 }
+
+
+
+
+
+
