@@ -12,11 +12,11 @@ import SwiftUI
 struct DestinationSearchView: View {
     // Properties
     @Binding var isShowView: Bool
-    @State private var destination = ""
     @State private var selectedOption: DestinationSearchOptions = .location
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var numGuests = 1
+    @ObservedObject var viewModel: ExploreViewModel
     
     // Body
     var locationBody: some View {
@@ -27,7 +27,15 @@ struct DestinationSearchView: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .imageScale(.small)
-                TextField("Search Destinations", text: $destination)
+                TextField(
+                    "Search Destinations",
+                    text: $viewModel.searchLocation
+                )
+                    .font(.subheadline)
+                    .onSubmit {
+                        viewModel.updateListingsForLocation()
+                        isShowView.toggle()
+                    }
             }
             .frame(height: 44)
             .padding(.horizontal)
@@ -91,9 +99,10 @@ struct DestinationSearchView: View {
                         .foregroundStyle(.black)
                 }
                 Spacer()
-                if !destination.isEmpty {
+                if !viewModel.searchLocation.isEmpty {
                     Button("Clear") {
-                        destination = ""
+                        viewModel.searchLocation = ""
+                        viewModel.updateListingsForLocation()
                     }
                     .foregroundStyle(.black)
                     .font(.subheadline)
@@ -132,7 +141,10 @@ struct DestinationSearchView: View {
 }
 
 #Preview {
-    DestinationSearchView(isShowView: .constant(true))
+    DestinationSearchView(
+        isShowView: .constant(true),
+        viewModel: ExploreViewModel(service: ExploreService())
+    )
 }
 
 

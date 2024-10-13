@@ -9,6 +9,6 @@ import Foundation
 
 final class ExploreService {
     func fetchListings() async throws -> [Listing] {
-        return Listing.mockData
+        return Listing.mockData.shuffled()
     }
 }
